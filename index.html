@@ -24,6 +24,8 @@
   gtag("config", "G-3KLNY8ZB2S");
 </script>
 <meta name="google-adsense-account" content="ca-pub-8828337552440063">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="quiethike-styles.css">
 </head>
 <body>
@@ -57,15 +59,15 @@
           <span>quiethike/log</span>
           <span class="diff-date">Aug 2026</span>
         </div>
-        <div class="diff-line diff-context">$ quickbooks --plan Simple Start --tier annual</div>
-        <div class="diff-line diff-removed">- $35/mo <span class="diff-label">(before Aug 1, 2026)</span></div>
-        <div class="diff-line diff-added">+ $38/mo <span class="diff-label">(current, verified against vendor page)</span></div>
+        <div class="diff-line diff-context">$ quickbooks --plan Plus --tier annual</div>
+        <div class="diff-line diff-removed">- ~$99–115/mo <span class="diff-label">(before Aug 1, 2026) <span class="src-tag">[3P — disputed]</span></span></div>
+        <div class="diff-line diff-added">+ $140/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
         <div class="diff-line diff-context">$ figma --plan Professional --seat Full</div>
-        <div class="diff-line diff-removed">- ~$12/seat/mo <span class="diff-label">(pre–March 2025 pricing)</span></div>
-        <div class="diff-line diff-added">+ $16/seat/mo <span class="diff-label">(current, seat-based overhaul)</span></div>
+        <div class="diff-line diff-removed">- ~$12/seat/mo <span class="diff-label">(pre–March 2025 pricing) <span class="src-tag">[3P]</span></span></div>
+        <div class="diff-line diff-added">+ $16/seat/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
         <div class="diff-line diff-context">$ kit --plan Creator --subs 1000</div>
-        <div class="diff-line diff-removed">- ~$15/mo <span class="diff-label">(before Sept 2025)</span></div>
-        <div class="diff-line diff-added">+ $33/mo <span class="diff-label">(current, roughly doubled)</span></div>
+        <div class="diff-line diff-removed">- $15/mo <span class="diff-label">(before Sept 2025, ~300 subs) <span class="src-tag">[3P]</span></span></div>
+        <div class="diff-line diff-added">+ $33/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
       </div>
     </div>
   </section>
@@ -75,45 +77,62 @@
       <div class="section-head">
         <p class="eyebrow">The log</p>
         <h2>This week's changes</h2>
-        <p>Every entry gets verified against the vendor's own current pricing page before it's logged here — no third-party blog taken at face value.</p>
+        <p>Every entry is verified against the vendor's current pricing page; historical "before" prices are separately sourced and labeled, since a vendor's own page rarely shows what something used to cost.</p>
       </div>
 
       <div class="log-list">
 
         <article class="log-entry">
           <div class="log-meta">
+            <span class="log-date">Announced August 2025, migration ongoing through 2026</span>
+            <span class="log-tag tag-up">Structural change</span>
+            <span class="log-tag tag-verified">Verified</span>
+          </div>
+          <h3>Salesforce replaces Einstein AI packaging with a $125/user/mo Agentforce add-on</h3>
+          <div class="diff-line diff-removed">- Einstein add-ons / Einstein 1 Editions (retired)</div>
+          <div class="diff-line diff-added">+ Agentforce add-ons, $125/user/mo billed annually <span class="src-tag">[VENDOR]</span> — $1,500/user/year <span class="src-tag">[DERIVED — VENDOR]</span></div>
+          <p class="log-body">This is an add-on price on top of the underlying Salesforce edition, not a replacement for Salesforce's core CRM subscription. Salesforce announced the Einstein-to-Agentforce replacement publicly in August 2025 — so it's not a hidden pricing-page swap — but the migration mechanics are where it gets less obvious. Agentforce (Default) reached End of Sale on June 17, 2025, and Salesforce's own Help docs lay out what happens when an existing Einstein customer upgrades their SKU to Agentforce. Separately, as of October 24, 2025, Agentforce usage outside unmetered employee-agent activity is tracked through a new "Flex Credits" system — so the $125/month sticker price doesn't mean unlimited AI usage. We could not verify a universal rule that every legacy Einstein customer is automatically moved to the new pricing at renewal; treat that specific claim as unconfirmed.</p>
+          <p class="log-source">Sources: <a href="https://www.salesforce.com/news/stories/pricing-update-2025/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce News — Pricing Update announcement</a> [VENDOR] · <a href="https://www.salesforce.com/agentforce/pricing/" target="_blank" rel="noopener" style="color: var(--accent);">Agentforce pricing page</a> [VENDOR] · <a href="https://help.salesforce.com/s/articleView?id=005197697&language=en_US&type=1" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce Help — Flex Credit Rate Card FAQ</a> [VENDOR]</p>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
             <span class="log-date">Aug 1, 2026</span>
             <span class="log-tag tag-up">Price increase</span>
+            <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
           </div>
-          <h3>QuickBooks Simple Start quietly climbs to $38/mo</h3>
-          <div class="diff-line diff-removed">- $35/mo (Simple Start, annual)</div>
-          <div class="diff-line diff-added">+ $38/mo (Simple Start, annual)</div>
-          <p class="log-body">QuickBooks raised prices across its lineup on August 1, 2026 — the third increase since 2022. No changelog banner, no email to existing subscribers at time of writing. The increase applies to new signups; existing subscribers should confirm their own renewal price directly, since grandfathering policies vary by plan vintage.</p>
-          <p class="log-source">Verified against: QuickBooks' own pricing page, cross-checked against two independent 2026 pricing trackers.</p>
+          <h3>QuickBooks raises Essentials, Plus, and Advanced — but not Simple Start</h3>
+          <p class="log-body" style="font-size: 0.86rem; color: var(--diff-red); margin-bottom: 14px;"><b>Correction:</b> an earlier version of this entry incorrectly stated that QuickBooks Simple Start's price rose to $38/mo on August 1, 2026. QuickBooks' own official pricing update confirms Simple Start, Free, Lite, and Ledger were explicitly excluded from this increase — only Essentials, Plus, and Advanced changed. This entry has been corrected to reflect that.</p>
+          <div class="diff-line diff-removed">- ~$99–115/mo <span class="src-tag">[3P — disputed]</span> (Plus, before Aug 1, 2026 — sources disagree on the exact prior figure)</div>
+          <div class="diff-line diff-added">+ $140/mo <span class="src-tag">[VENDOR]</span> (Plus, current)</div>
+          <p class="log-body">QuickBooks Online raised prices for Essentials, Plus, and Advanced at renewals on or after August 1, 2026 — Simple Start, Free, Lite, and Ledger were not part of this increase, per QuickBooks' own announcement. Essentials rose to $85/mo (third-party sources disagree on the prior figure, citing either $60 or $75). Advanced rose to $340/mo (prior figure similarly disputed between $200 and $275 across sources). Prepaid annual subscribers generally keep their existing rate until the current term ends, and some recent subscribers get a six-month price-protection window. We could not source an exact count of how many total increases QuickBooks has made since 2022; treat "a series of past increases" as accurate without a specific number attached.</p>
+          <p class="log-source">Sources: <a href="https://quickbooks.intuit.com/r/product-update/quickbooks-price-changes/" target="_blank" rel="noopener" style="color: var(--accent);">QuickBooks — official pricing update announcement</a> [VENDOR] · <a href="https://www.certumsolutions.com/library/quickbooks-price-increase-august-2026" target="_blank" rel="noopener" style="color: var(--accent);">Certum Solutions</a> [3P] · <a href="https://www.mosofin.com/blog/quickbooks-price-increase-2026" target="_blank" rel="noopener" style="color: var(--accent);">MosoFin</a> [3P — disagrees with Certum on prior Plus/Advanced figures]</p>
         </article>
 
         <article class="log-entry">
           <div class="log-meta">
             <span class="log-date">Mar 11, 2025</span>
             <span class="log-tag tag-up">Structural change</span>
+            <span class="log-tag tag-verified">Verified</span>
           </div>
-          <h3>Figma's per-product pricing became per-seat — and monthly billing quietly disappeared from two tiers</h3>
-          <div class="diff-line diff-removed">- Figma Design, Dev Mode, FigJam billed separately</div>
-          <div class="diff-line diff-added">+ Unified seat types (Full/Dev/Collab), $16–$90/seat/mo</div>
+          <h3>Figma's per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise</h3>
+          <div class="diff-line diff-removed">- Figma Design, Dev Mode, FigJam billed separately <span class="src-tag">[VENDOR]</span></div>
+          <div class="diff-line diff-added">+ Unified seat types (Full/Dev/Collab), $16–$90/seat/mo <span class="src-tag">[VENDOR]</span></div>
           <p class="log-body">The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal.</p>
-          <p class="log-source">Verified against: Figma's own pricing page and Help Center documentation, cross-checked against Figma's own community forum.</p>
+          <p class="log-source">Sources: <a href="https://www.figma.com/professional/" target="_blank" rel="noopener" style="color: var(--accent);">Figma — Professional plan pricing</a> [VENDOR] · <a href="https://help.figma.com/hc/en-us/articles/13839214115607-Professional-plan-overview" target="_blank" rel="noopener" style="color: var(--accent);">Figma Help — Professional plan overview</a> [VENDOR] · <a href="https://forum.figma.com/t/i-m-curious-about-the-differences-in-billing-methods-for-the-plans/94132" target="_blank" rel="noopener" style="color: var(--accent);">Figma community forum</a> [VENDOR]</p>
         </article>
 
         <article class="log-entry">
           <div class="log-meta">
             <span class="log-date">Sep 2025</span>
             <span class="log-tag tag-up">Price increase</span>
+            <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
           </div>
           <h3>Kit's Creator plan roughly doubled — and the old $15 tier just stopped existing</h3>
-          <div class="diff-line diff-removed">- ~$15/mo (Creator, ~300 subscribers, legacy pricing)</div>
-          <div class="diff-line diff-added">+ $33/mo annual, $39/mo monthly (Creator, 1,000 subscribers)</div>
-          <p class="log-body">This wasn't a gradual increase — the old low-tier pricing structure was retired outright. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</p>
-          <p class="log-source">Verified against: Kit's own help center, cross-checked against two independent 2026 pricing breakdowns.</p>
+          <div class="diff-line diff-removed">- $15/mo <span class="src-tag">[3P]</span> (Creator, ~300 subscribers, legacy pricing)</div>
+          <div class="diff-line diff-added">+ $33/mo annual, $39/mo monthly <span class="src-tag">[VENDOR]</span> (Creator, 1,000 subscribers)</div>
+          <p class="log-body">This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</p>
+          <p class="log-source">Sources: <a href="https://help.kit.com/en/articles/4494683-creator-plan-vs-creator-pro" target="_blank" rel="noopener" style="color: var(--accent);">Kit's own help center</a> [VENDOR] · <a href="https://ecommerce-platforms.com/articles/convertkit-pricing" target="_blank" rel="noopener" style="color: var(--accent);">Ecommerce-Platforms.com, published April 2024 — contemporaneous record of the $15/mo price while it was still current</a> [3P] · <a href="https://buyersprint.com/2026/04/05/convertkit-pricing-2026/" target="_blank" rel="noopener" style="color: var(--accent);">BuyerSprint</a> [3P]</p>
         </article>
 
       </div>
