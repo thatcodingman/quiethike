@@ -54,7 +54,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 /* ---------------- header ---------------- */
 .site-header {
   position: sticky; top: 0; z-index: 40;
-  background: rgba(20, 22, 29, 0.92);
+  background: rgba(19, 29, 26, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
 }
@@ -88,15 +88,18 @@ h1 {
   font-size: clamp(1.9rem, 3.6vw, 2.7rem); line-height: 1.15; letter-spacing: -0.01em;
   margin: 0 0 20px; color: var(--ink);
 }
+::selection { background: var(--accent); color: #0e1a18; }
+
 .hero-sub { font-size: 1.04rem; color: var(--ink-soft); max-width: 48ch; margin: 0 0 30px; }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn {
   font-family: var(--font-mono); font-size: 0.84rem; padding: 12px 20px;
   border-radius: var(--radius); display: inline-block; border: 1px solid var(--line-strong);
+  user-select: none;
 }
 .btn-primary { background: var(--accent); color: #0e1a18; border-color: var(--accent); font-weight: 600; }
 .btn-primary:hover { background: #66c2b5; text-decoration: none; }
-.btn-ghost { color: var(--ink); }
+.btn-ghost { color: var(--ink); border-color: #4a5f57; }
 .btn-ghost:hover { background: var(--bg-raised); text-decoration: none; }
 
 /* ---------------- diff card (hero signature element) ---------------- */
@@ -178,6 +181,23 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 20px; }
 .foot-links { display: flex; gap: 20px; }
 .foot-links a { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); }
 .foot-links a:hover { color: var(--ink); }
+
+/* ---------------- content pages (terms/privacy) ---------------- */
+.page-hero { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+.page-hero h1 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin: 0 0 12px; }
+.page-hero p { color: var(--ink-soft); max-width: 56ch; margin: 0; }
+.content { padding: 44px 0 64px; }
+.content-narrow { max-width: 74ch; }
+.content h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; margin: 36px 0 12px; color: var(--ink); }
+.content h2:first-child { margin-top: 0; }
+.content p { color: var(--ink); margin: 0 0 14px; line-height: 1.65; }
+.content ul, .content ol { color: var(--ink); margin: 0 0 14px; padding-left: 22px; }
+.content li { margin-bottom: 6px; }
+.content .updated {
+  font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft);
+  margin-bottom: 26px; display: inline-block; padding: 4px 10px;
+  border: 1px solid var(--line-strong); border-radius: 2px;
+}
 
 /* ---------------- responsive ---------------- */
 @media (max-width: 860px) {
