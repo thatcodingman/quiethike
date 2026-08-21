@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuietHike — Software Price Changes, Caught and Verified</title>
+<meta name="description" content="Software companies raise prices quietly. QuietHike catches the change, verifies it against the vendor's own page, and tells you what actually happened — every week.">
+<link rel="canonical" href="https://quiethike.com/">
+<meta property="og:title" content="QuietHike — Software Price Changes, Caught and Verified">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="quiethike-styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="mark">▲▼</span> QuietHike</a>
+    <nav class="main-nav">
+      <a href="#log">This week</a>
+      <a href="#methodology">How we verify</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Weekly price-change tracker</p>
+        <h1>Software raises prices quietly.<br>We watch, and we write it down.</h1>
+        <p class="hero-sub">Every week, we catch a real pricing change a vendor didn't put in a headline — a shrunk free tier, a renamed plan that costs more, a promo that quietly became the standard rate — verify it against the vendor's own page, and log it here.</p>
+        <div class="hero-ctas">
+          <a href="#log" class="btn btn-primary">See this week's changes</a>
+          <a href="#methodology" class="btn btn-ghost">How verification works</a>
+        </div>
+      </div>
+
+      <div class="diff-card" aria-label="Recent price change example">
+        <div class="diff-head">
+          <span>quiethike/log</span>
+          <span class="diff-date">Aug 2026</span>
+        </div>
+        <div class="diff-line diff-context">$ quickbooks --plan Simple Start --tier annual</div>
+        <div class="diff-line diff-removed">- $35/mo <span class="diff-label">(before Aug 1, 2026)</span></div>
+        <div class="diff-line diff-added">+ $38/mo <span class="diff-label">(current, verified against vendor page)</span></div>
+        <div class="diff-line diff-context">$ figma --plan Professional --seat Full</div>
+        <div class="diff-line diff-removed">- ~$12/seat/mo <span class="diff-label">(pre–March 2025 pricing)</span></div>
+        <div class="diff-line diff-added">+ $16/seat/mo <span class="diff-label">(current, seat-based overhaul)</span></div>
+        <div class="diff-line diff-context">$ kit --plan Creator --subs 1000</div>
+        <div class="diff-line diff-removed">- ~$15/mo <span class="diff-label">(before Sept 2025)</span></div>
+        <div class="diff-line diff-added">+ $33/mo <span class="diff-label">(current, roughly doubled)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="log">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The log</p>
+        <h2>This week's changes</h2>
+        <p>Every entry gets verified against the vendor's own current pricing page before it's logged here — no third-party blog taken at face value.</p>
+      </div>
+
+      <div class="log-list">
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <span class="log-date">Aug 1, 2026</span>
+            <span class="log-tag tag-up">Price increase</span>
+          </div>
+          <h3>QuickBooks Simple Start quietly climbs to $38/mo</h3>
+          <div class="diff-line diff-removed">- $35/mo (Simple Start, annual)</div>
+          <div class="diff-line diff-added">+ $38/mo (Simple Start, annual)</div>
+          <p class="log-body">QuickBooks raised prices across its lineup on August 1, 2026 — the third increase since 2022. No changelog banner, no email to existing subscribers at time of writing. The increase applies to new signups; existing subscribers should confirm their own renewal price directly, since grandfathering policies vary by plan vintage.</p>
+          <p class="log-source">Verified against: QuickBooks' own pricing page, cross-checked against two independent 2026 pricing trackers.</p>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <span class="log-date">Mar 11, 2025</span>
+            <span class="log-tag tag-up">Structural change</span>
+          </div>
+          <h3>Figma's per-product pricing became per-seat — and monthly billing quietly disappeared from two tiers</h3>
+          <div class="diff-line diff-removed">- Figma Design, Dev Mode, FigJam billed separately</div>
+          <div class="diff-line diff-added">+ Unified seat types (Full/Dev/Collab), $16–$90/seat/mo</div>
+          <p class="log-body">The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal.</p>
+          <p class="log-source">Verified against: Figma's own pricing page and Help Center documentation, cross-checked against Figma's own community forum.</p>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <span class="log-date">Sep 2025</span>
+            <span class="log-tag tag-up">Price increase</span>
+          </div>
+          <h3>Kit's Creator plan roughly doubled — and the old $15 tier just stopped existing</h3>
+          <div class="diff-line diff-removed">- ~$15/mo (Creator, ~300 subscribers, legacy pricing)</div>
+          <div class="diff-line diff-added">+ $33/mo annual, $39/mo monthly (Creator, 1,000 subscribers)</div>
+          <p class="log-body">This wasn't a gradual increase — the old low-tier pricing structure was retired outright. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</p>
+          <p class="log-source">Verified against: Kit's own help center, cross-checked against two independent 2026 pricing breakdowns.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="methodology">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Methodology</p>
+        <h2>How we verify a change before logging it</h2>
+      </div>
+      <ol class="method-list">
+        <li>
+          <div>
+            <h4>Catch it</h4>
+            <p>A price change surfaces from a vendor's own changelog, a community forum thread, a support article update, or a discrepancy noticed while researching elsewhere.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Verify against the vendor directly</h4>
+            <p>Before anything gets logged, we check the vendor's own current pricing page — never a third-party blog alone. If the vendor's own pages disagree with each other, we say so rather than picking one.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Cross-check the "before" price</h4>
+            <p>The old price gets the same scrutiny as the new one — sourced from an archived page, a prior independent pricing tracker, or the vendor's own changelog, never guessed.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Log it plainly</h4>
+            <p>What changed, what it actually means for a real buyer, and where to verify it yourself. No affiliate framing, no "which plan should you pick" — just what happened.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="about" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head" style="max-width: 68ch;">
+        <p class="eyebrow">About</p>
+        <h2>Why this exists</h2>
+        <p>Most "software raises prices" coverage happens after the fact, if it happens at all — a Reddit thread, a scattered blog post, easy to miss. QuietHike exists to catch the change while it's current, verify it properly, and give it a permanent, plain-English record. A companion to <a href="https://usestackscope.com" style="color: var(--amber);">StackScope</a>, which does the same verification work for full category comparisons rather than single price changes.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
+    <nav class="foot-links">
+      <a href="#log">This week</a>
+      <a href="#methodology">Methodology</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
