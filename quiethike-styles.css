@@ -8,17 +8,17 @@
 
 :root {
   /* --- color tokens --- */
-  --bg: #191a1f;
-  --bg-raised: #212228;
+  --bg: #131d1a;
+  --bg-raised: #1a2622;
   --ink: #e9e6df;
   --ink-soft: #9a9aa3;
   --diff-red: #c1533c;
-  --diff-red-bg: #2a1815;
+  --diff-red-bg: #23181a;
   --diff-green: #5a9d6f;
-  --diff-green-bg: #17241b;
+  --diff-green-bg: #172420;
   --accent: #4fa89c;
-  --line: #2a2d38;
-  --line-strong: #3a3e4c;
+  --line: #24322e;
+  --line-strong: #34473f;
 
   /* --- type tokens --- */
   --font-display: 'Fraunces', serif;
