@@ -63,11 +63,11 @@
         <div class="diff-line diff-removed">- ~$99–115/mo <span class="diff-label">(before Aug 1, 2026) <span class="src-tag">[3P — disputed]</span></span></div>
         <div class="diff-line diff-added">+ $140/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
         <div class="diff-line diff-context">$ figma --plan Professional --seat Full</div>
-        <div class="diff-line diff-removed">- ~$12/seat/mo <span class="diff-label">(pre–March 2025 pricing) <span class="src-tag">[3P]</span></span></div>
-        <div class="diff-line diff-added">+ $16/seat/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
+        <div class="diff-line diff-removed">- Per-product billing (Design/Dev Mode/FigJam separate) <span class="diff-label">(pre–March 2025) <span class="src-tag">[VENDOR]</span></span></div>
+        <div class="diff-line diff-added">+ $16/seat/mo <span class="diff-label">(current, unified Full seat) <span class="src-tag">[VENDOR]</span></span></div>
         <div class="diff-line diff-context">$ kit --plan Creator --subs 1000</div>
         <div class="diff-line diff-removed">- $15/mo <span class="diff-label">(before Sept 2025, ~300 subs) <span class="src-tag">[3P]</span></span></div>
-        <div class="diff-line diff-added">+ $33/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
+        <div class="diff-line diff-added">+ $33/mo billed annually <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
       </div>
     </div>
   </section>
@@ -81,6 +81,32 @@
       </div>
 
       <div class="log-list">
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <span class="log-date">August 25, 2026</span>
+            <span class="log-tag tag-up">Structural change</span>
+            <span class="log-tag tag-verified">Verified</span>
+          </div>
+          <h3>Salesforce keeps Agentforce at $125/user/mo but adds new pricing models</h3>
+          <div class="diff-line diff-removed">- Agentforce add-on: $125/user/month billed annually <span class="src-tag">[VENDOR]</span> (single option)</div>
+          <div class="diff-line diff-added">+ $125/user/mo add-on remains <span class="src-tag">[VENDOR]</span> — plus new Flex Credits ($500/100,000 credits), Conversations ($2 each), Agentforce 1 Editions (from $550/user/mo), and a $5/user/mo Agentforce User License <span class="src-tag">[VENDOR]</span></div>
+          <p class="log-body">The $125/user/month Agentforce add-on hasn't been replaced — it's still listed for Sales and Service. What's changed is the packaging around it: Salesforce now also sells consumption-based Flex Credits, per-conversation pricing, a much pricier all-in Agentforce 1 Edition tier, and a low-cost per-user license that still requires buying Flex Credits separately. For buyers, $125 is now one option inside a wider menu rather than the only current path to Agentforce.</p>
+          <p class="log-source">Sources: <a href="https://www.salesforce.com/agentforce/pricing/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce — Agentforce pricing page</a> [VENDOR] · <a href="https://www.salesforce.com/sales/pricing/add-ons/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce — Sales add-on pricing</a> [VENDOR]</p>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <span class="log-date">Announced Sep 2025, sunset phased 2026–2029</span>
+            <span class="log-tag tag-up">Structural change</span>
+            <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
+          </div>
+          <h3>Atlassian is sunsetting Data Center outright — and Cloud migration isn't a like-for-like cost swap</h3>
+          <div class="diff-line diff-removed">- Data Center: perpetual on-prem licensing, no defined end date <span class="src-tag">[VENDOR]</span></div>
+          <div class="diff-line diff-added">+ Phased shutdown: new-customer sales ended Mar 30, 2026 → existing-customer expansions end Mar 30, 2028 → licenses go read-only Mar 28, 2029 <span class="src-tag">[VENDOR]</span></div>
+          <p class="log-body">Atlassian is retiring Data Center entirely on a three-year phased timeline rather than just raising its price. Bitbucket Data Center is the one exception — it keeps a separate hybrid license instead of following the sunset schedule. Atlassian is offering a 10–20% first-year discount on Cloud Enterprise for customers who migrate by June 2027, but that incentive doesn't fully offset the underlying cost shift: independent analysis puts the average Cloud premium over equivalent Data Center pricing at around 28%, a figure Atlassian itself has not published or confirmed on its own pricing pages.</p>
+          <p class="log-source">Sources: <a href="https://www.atlassian.com/licensing/data-center-end-of-life" target="_blank" rel="noopener" style="color: var(--accent);">Atlassian — Data Center End of Life</a> [VENDOR] · <a href="https://www.computerworld.com/article/4054807/atlassian-says-its-dont-f-the-customer-principle-drove-cloud-only-decision.html" target="_blank" rel="noopener" style="color: var(--accent);">Computerworld</a> [3P] · <a href="https://thejiraguy.com/2025/09/08/so-long-data-center/" target="_blank" rel="noopener" style="color: var(--accent);">The Jira Guy</a> [3P — 28% figure]</p>
+        </article>
 
         <article class="log-entry">
           <div class="log-meta">
@@ -101,7 +127,7 @@
             <span class="log-tag tag-up">Price increase</span>
             <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
           </div>
-          <h3>QuickBooks raises Essentials, Plus, and Advanced — but not Simple Start</h3>
+          <h3>QuickBooks raises affected Essentials, Plus, and Advanced subscriptions at renewal — but not Simple Start</h3>
           <p class="log-body" style="font-size: 0.86rem; color: var(--diff-red); margin-bottom: 14px;"><b>Correction:</b> an earlier version of this entry incorrectly stated that QuickBooks Simple Start's price rose to $38/mo on August 1, 2026. QuickBooks' own official pricing update confirms Simple Start, Free, Lite, and Ledger were explicitly excluded from this increase — only Essentials, Plus, and Advanced changed. This entry has been corrected to reflect that.</p>
           <div class="diff-line diff-removed">- ~$99–115/mo <span class="src-tag">[3P — disputed]</span> (Plus, before Aug 1, 2026 — sources disagree on the exact prior figure)</div>
           <div class="diff-line diff-added">+ $140/mo <span class="src-tag">[VENDOR]</span> (Plus, current)</div>
@@ -119,7 +145,7 @@
           <div class="diff-line diff-removed">- Figma Design, Dev Mode, FigJam billed separately <span class="src-tag">[VENDOR]</span></div>
           <div class="diff-line diff-added">+ Unified seat types (Full/Dev/Collab), $16–$90/seat/mo <span class="src-tag">[VENDOR]</span></div>
           <p class="log-body">The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal.</p>
-          <p class="log-source">Sources: <a href="https://www.figma.com/professional/" target="_blank" rel="noopener" style="color: var(--accent);">Figma — Professional plan pricing</a> [VENDOR] · <a href="https://help.figma.com/hc/en-us/articles/13839214115607-Professional-plan-overview" target="_blank" rel="noopener" style="color: var(--accent);">Figma Help — Professional plan overview</a> [VENDOR] · <a href="https://forum.figma.com/t/i-m-curious-about-the-differences-in-billing-methods-for-the-plans/94132" target="_blank" rel="noopener" style="color: var(--accent);">Figma community forum</a> [VENDOR]</p>
+          <p class="log-source">Sources: <a href="https://www.figma.com/professional/" target="_blank" rel="noopener" style="color: var(--accent);">Figma — Professional plan pricing</a> [VENDOR] · <a href="https://help.figma.com/hc/en-us/articles/13839214115607-Professional-plan-overview" target="_blank" rel="noopener" style="color: var(--accent);">Figma Help — Professional plan overview</a> [VENDOR] · <a href="https://forum.figma.com/t/i-m-curious-about-the-differences-in-billing-methods-for-the-plans/94132" target="_blank" rel="noopener" style="color: var(--accent);">Figma community forum</a> [3P]</p>
         </article>
 
         <article class="log-entry">
@@ -128,7 +154,7 @@
             <span class="log-tag tag-up">Price increase</span>
             <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
           </div>
-          <h3>Kit's Creator plan roughly doubled — and the old $15 tier just stopped existing</h3>
+          <h3>Kit retired its old $15 entry tier — and Creator now starts at $33/mo billed annually</h3>
           <div class="diff-line diff-removed">- $15/mo <span class="src-tag">[3P]</span> (Creator, ~300 subscribers, legacy pricing)</div>
           <div class="diff-line diff-added">+ $33/mo annual, $39/mo monthly <span class="src-tag">[VENDOR]</span> (Creator, 1,000 subscribers)</div>
           <p class="log-body">This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</p>
