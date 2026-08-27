@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>QuietHike — Software Price Changes, Caught and Verified</title>
+  <link>https://quiethike.com/</link>
+  <description>A weekly tracker of quiet, unannounced software pricing and policy changes, verified against each vendor's own current page.</description>
+  <language>en-us</language>
+  <atom:link href="https://quiethike.com/rss.xml" rel="self" type="application/rss+xml" />
+
+  <item>
+    <title>Salesforce keeps Agentforce at $125/user/mo but adds new pricing models</title>
+    <link>https://quiethike.com/#salesforce-agentforce-packaging-2026-08</link>
+    <guid isPermaLink="true">https://quiethike.com/#salesforce-agentforce-packaging-2026-08</guid>
+    <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
+    <description>The $125/user/month Agentforce add-on hasn't been replaced — it's still listed for Sales and Service. What's changed is the packaging around it: Salesforce now also sells consumption-based Flex Credits, per-conversation pricing, a much pricier all-in Agentforce 1 Edition tier, and a low-cost per-user license that still requires buying Flex Credits separately. For buyers, $125 is now one option inside a wider menu rather than the only current path to Agentforce.</description>
+  </item>
+
+  <item>
+    <title>Atlassian is sunsetting Data Center outright — and Cloud migration isn't a like-for-like cost swap</title>
+    <link>https://quiethike.com/#atlassian-data-center-sunset</link>
+    <guid isPermaLink="true">https://quiethike.com/#atlassian-data-center-sunset</guid>
+    <pubDate>Tue, 25 Aug 2026 11:00:00 GMT</pubDate>
+    <description>Atlassian is retiring Data Center entirely on a three-year phased timeline. Bitbucket Data Center keeps a separate hybrid license. A 10-20% first-year Cloud Enterprise discount is offered through June 2027, but independent analysis puts the average Cloud premium at around 28% — a figure Atlassian itself has not published or confirmed.</description>
+  </item>
+
+  <item>
+    <title>Salesforce replaces Einstein AI packaging with a $125/user/mo Agentforce add-on</title>
+    <link>https://quiethike.com/#salesforce-einstein-to-agentforce</link>
+    <guid isPermaLink="true">https://quiethike.com/#salesforce-einstein-to-agentforce</guid>
+    <pubDate>Fri, 21 Aug 2026 12:00:00 GMT</pubDate>
+    <description>This is an add-on price on top of the underlying Salesforce edition, not a replacement for Salesforce's core CRM subscription. Agentforce usage outside unmetered employee-agent activity is now tracked through a separate Flex Credits system, so the $125/month sticker price doesn't mean unlimited AI usage.</description>
+  </item>
+
+  <item>
+    <title>QuickBooks raises affected Essentials, Plus, and Advanced subscriptions at renewal — but not Simple Start</title>
+    <link>https://quiethike.com/#quickbooks-online-price-increase-2026</link>
+    <guid isPermaLink="true">https://quiethike.com/#quickbooks-online-price-increase-2026</guid>
+    <pubDate>Fri, 21 Aug 2026 11:00:00 GMT</pubDate>
+    <description>QuickBooks Online raised prices for Essentials, Plus, and Advanced at renewals on or after August 1, 2026 — Simple Start, Free, Lite, and Ledger were not part of this increase, per QuickBooks' own announcement. Essentials rose to $85/mo, Plus to $140/mo, and Advanced to $340/mo.</description>
+  </item>
+
+  <item>
+    <title>Figma's per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise</title>
+    <link>https://quiethike.com/#figma-per-seat-pricing-overhaul</link>
+    <guid isPermaLink="true">https://quiethike.com/#figma-per-seat-pricing-overhaul</guid>
+    <pubDate>Fri, 21 Aug 2026 10:00:00 GMT</pubDate>
+    <description>The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul.</description>
+  </item>
+
+  <item>
+    <title>Kit retired its old $15 entry tier — and Creator now starts at $33/mo billed annually</title>
+    <link>https://quiethike.com/#kit-creator-plan-repricing</link>
+    <guid isPermaLink="true">https://quiethike.com/#kit-creator-plan-repricing</guid>
+    <pubDate>Fri, 21 Aug 2026 09:00:00 GMT</pubDate>
+    <description>This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</description>
+  </item>
+
+</channel>
+</rss>
