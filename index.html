@@ -215,6 +215,10 @@
         <p>Every entry is verified against the vendor's current pricing page; historical "before" prices are separately sourced and labeled, since a vendor's own page rarely shows what something used to cost.</p>
       </div>
 
+      <div class="search-bar">
+        <input type="search" id="log-search" class="search-input" placeholder="Search companies, plans, or pricing changes…" aria-label="Search the log">
+      </div>
+
       <div class="filter-bar" role="group" aria-label="Filter log entries by type">
         <button type="button" class="filter-btn is-active" data-filter="all">All</button>
         <button type="button" class="filter-btn" data-filter="increase">Price Increase</button>
@@ -407,38 +411,82 @@
 
 <script>
 (function () {
-  // --- filter bar + clickable stats (shared logic) ---
+  // --- filter bar + clickable stats + search (composable: both conditions must match) ---
   var filterBtns = document.querySelectorAll('.filter-btn');
   var statTiles = document.querySelectorAll('.stat-tile');
   var entries = document.querySelectorAll('.log-entry[data-filter]');
   var emptyMsg = document.getElementById('filter-empty');
+  var searchInput = document.getElementById('log-search');
 
-  function applyFilter(filter) {
-    filterBtns.forEach(function (b) {
-      b.classList.toggle('is-active', b.getAttribute('data-filter') === filter);
-    });
+  var currentFilter = 'all';
+  var currentQuery = '';
+  var searchIndex = null; // populated from data/log-entries.json, keyed by entry id
+
+  function entryMatchesQuery(entry, query) {
+    if (!query) return true;
+    if (!searchIndex) {
+      // fallback: search the entry's own rendered text if the archive hasn't loaded yet
+      return entry.textContent.toLowerCase().indexOf(query) !== -1;
+    }
+    var record = searchIndex[entry.id];
+    if (!record) return entry.textContent.toLowerCase().indexOf(query) !== -1;
+    var haystack = (record.company + ' ' + record.headline + ' ' + record.body).toLowerCase();
+    return haystack.indexOf(query) !== -1;
+  }
+
+  function render() {
     var visibleCount = 0;
     entries.forEach(function (entry) {
       var tags = (entry.getAttribute('data-filter') || '').split(' ');
-      var match = filter === 'all' || tags.indexOf(filter) !== -1;
+      var matchesFilter = currentFilter === 'all' || tags.indexOf(currentFilter) !== -1;
+      var matchesQuery = entryMatchesQuery(entry, currentQuery);
+      var match = matchesFilter && matchesQuery;
       entry.hidden = !match;
       if (match) visibleCount++;
     });
     emptyMsg.hidden = visibleCount !== 0;
-    document.getElementById('log').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function applyFilter(filter, scroll) {
+    currentFilter = filter;
+    filterBtns.forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-filter') === filter);
+    });
+    render();
+    if (scroll) {
+      document.getElementById('log').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      applyFilter(btn.getAttribute('data-filter'));
+      applyFilter(btn.getAttribute('data-filter'), true);
     });
   });
 
   statTiles.forEach(function (tile) {
     tile.addEventListener('click', function () {
-      applyFilter(tile.getAttribute('data-stat-filter'));
+      applyFilter(tile.getAttribute('data-stat-filter'), true);
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      currentQuery = searchInput.value.trim().toLowerCase();
+      render();
+    });
+  }
+
+  // load the structured archive once, for full-text search matching
+  fetch('data/log-entries.json')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      searchIndex = {};
+      data.forEach(function (record) { searchIndex[record.id] = record; });
+    })
+    .catch(function () {
+      // search still works via on-page text fallback if the archive fails to load
+    });
 
   // --- expandable evidence cards ---
   document.querySelectorAll('.evidence-toggle').forEach(function (btn) {
