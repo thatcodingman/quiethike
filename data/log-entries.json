@@ -1,0 +1,112 @@
+[
+  {
+    "id": "salesforce-agentforce-packaging-2026-08",
+    "company": "Salesforce",
+    "headline": "Salesforce keeps Agentforce at $125/user/mo but adds new pricing models",
+    "date_display": "August 25, 2026",
+    "date_logged": "2026-08-25",
+    "tags": ["structural", "verified"],
+    "status_label": "Structural change",
+    "verification_label": "Verified",
+    "old_price": "$125/user/month billed annually (Agentforce add-on, single option)",
+    "new_price": "$125/user/mo add-on remains, plus new Flex Credits ($500/100,000 credits), Conversations ($2 each), Agentforce 1 Editions (from $550/user/mo), and a $5/user/mo Agentforce User License",
+    "body": "The $125/user/month Agentforce add-on hasn't been replaced — it's still listed for Sales and Service. What's changed is the packaging around it: Salesforce now also sells consumption-based Flex Credits, per-conversation pricing, a much pricier all-in Agentforce 1 Edition tier, and a low-cost per-user license that still requires buying Flex Credits separately. For buyers, $125 is now one option inside a wider menu rather than the only current path to Agentforce.",
+    "sources": [
+      { "name": "Salesforce — Agentforce pricing page", "url": "https://www.salesforce.com/agentforce/pricing/", "type": "VENDOR" },
+      { "name": "Salesforce — Sales add-on pricing", "url": "https://www.salesforce.com/sales/pricing/add-ons/", "type": "VENDOR" }
+    ]
+  },
+  {
+    "id": "atlassian-data-center-sunset",
+    "company": "Atlassian",
+    "headline": "Atlassian is sunsetting Data Center outright — and Cloud migration isn't a like-for-like cost swap",
+    "date_display": "Announced Sep 2025, sunset phased 2026–2029",
+    "date_logged": "2026-08-25",
+    "tags": ["structural", "disputed"],
+    "status_label": "Structural change",
+    "verification_label": "Current price verified · historical price third-party",
+    "old_price": "Data Center: perpetual on-prem licensing, no defined end date",
+    "new_price": "Phased shutdown: new-customer sales ended Mar 30, 2026 → existing-customer expansions end Mar 30, 2028 → licenses go read-only Mar 28, 2029",
+    "body": "Atlassian is retiring Data Center entirely on a three-year phased timeline rather than just raising its price. Bitbucket Data Center is the one exception — it keeps a separate hybrid license instead of following the sunset schedule. Atlassian is offering a 10-20% first-year discount on Cloud Enterprise for customers who migrate by June 2027, but that incentive doesn't fully offset the underlying cost shift: independent analysis puts the average Cloud premium over equivalent Data Center pricing at around 28%, a figure Atlassian itself has not published or confirmed on its own pricing pages.",
+    "disputed_note": "Atlassian does not publish or confirm this figure on its own pricing pages. The ~28% average Cloud cost premium comes from independent third-party analysis (Computerworld and The Jira Guy), not from Atlassian directly — treat it as a credible estimate, not a vendor-confirmed number.",
+    "sources": [
+      { "name": "Atlassian — Data Center End of Life", "url": "https://www.atlassian.com/licensing/data-center-end-of-life", "type": "VENDOR" },
+      { "name": "Computerworld", "url": "https://www.computerworld.com/article/4054807/atlassian-says-its-dont-f-the-customer-principle-drove-cloud-only-decision.html", "type": "3P" },
+      { "name": "The Jira Guy", "url": "https://thejiraguy.com/2025/09/08/so-long-data-center/", "type": "3P — 28% figure" }
+    ]
+  },
+  {
+    "id": "salesforce-einstein-to-agentforce",
+    "company": "Salesforce",
+    "headline": "Salesforce replaces Einstein AI packaging with a $125/user/mo Agentforce add-on",
+    "date_display": "Announced August 2025, migration ongoing through 2026",
+    "date_logged": "2026-08-21",
+    "tags": ["structural", "verified"],
+    "status_label": "Structural change",
+    "verification_label": "Verified",
+    "old_price": "Einstein add-ons / Einstein 1 Editions (retired)",
+    "new_price": "Agentforce add-ons, $125/user/mo billed annually — $1,500/user/year",
+    "body": "This is an add-on price on top of the underlying Salesforce edition, not a replacement for Salesforce's core CRM subscription. Salesforce announced the Einstein-to-Agentforce replacement publicly in August 2025 — so it's not a hidden pricing-page swap — but the migration mechanics are where it gets less obvious. Agentforce (Default) reached End of Sale on June 17, 2025, and Salesforce's own Help docs lay out what happens when an existing Einstein customer upgrades their SKU to Agentforce. Separately, as of October 24, 2025, Agentforce usage outside unmetered employee-agent activity is tracked through a new Flex Credits system — so the $125/month sticker price doesn't mean unlimited AI usage. We could not verify a universal rule that every legacy Einstein customer is automatically moved to the new pricing at renewal; treat that specific claim as unconfirmed.",
+    "sources": [
+      { "name": "Salesforce News — Pricing Update announcement", "url": "https://www.salesforce.com/news/stories/pricing-update-2025/", "type": "VENDOR" },
+      { "name": "Agentforce pricing page", "url": "https://www.salesforce.com/agentforce/pricing/", "type": "VENDOR" },
+      { "name": "Salesforce Help — Flex Credit Rate Card FAQ", "url": "https://help.salesforce.com/s/articleView?id=005197697&language=en_US&type=1", "type": "VENDOR" }
+    ]
+  },
+  {
+    "id": "quickbooks-online-price-increase-2026",
+    "company": "QuickBooks Online",
+    "headline": "QuickBooks raises affected Essentials, Plus, and Advanced subscriptions at renewal — but not Simple Start",
+    "date_display": "Aug 1, 2026",
+    "date_logged": "2026-08-21",
+    "tags": ["increase", "disputed"],
+    "status_label": "Price increase",
+    "verification_label": "Current price verified · historical price third-party",
+    "old_price": "~$99–115/mo (Plus, before Aug 1, 2026 — disputed)",
+    "new_price": "$140/mo (Plus, current)",
+    "body": "QuickBooks Online raised prices for Essentials, Plus, and Advanced at renewals on or after August 1, 2026 — Simple Start, Free, Lite, and Ledger were not part of this increase, per QuickBooks' own announcement. Essentials rose to $85/mo (third-party sources disagree on the prior figure, citing either $60 or $75). Advanced rose to $340/mo (prior figure similarly disputed between $200 and $275 across sources). Prepaid annual subscribers generally keep their existing rate until the current term ends, and some recent subscribers get a six-month price-protection window.",
+    "correction_note": "An earlier version of this entry incorrectly stated that QuickBooks Simple Start's price rose to $38/mo on August 1, 2026. QuickBooks' own official pricing update confirms Simple Start, Free, Lite, and Ledger were explicitly excluded from this increase — only Essentials, Plus, and Advanced changed. This entry has been corrected to reflect that.",
+    "disputed_note": "Third-party sources disagree on QuickBooks Plus's exact prior price — reports cite figures ranging roughly $99 to $115/mo, and no vendor archive confirms a single number. The current $140/mo figure is vendor-confirmed; only the historical 'before' price is disputed.",
+    "sources": [
+      { "name": "QuickBooks — official pricing update announcement", "url": "https://quickbooks.intuit.com/r/product-update/quickbooks-price-changes/", "type": "VENDOR" },
+      { "name": "Certum Solutions", "url": "https://www.certumsolutions.com/library/quickbooks-price-increase-august-2026", "type": "3P" },
+      { "name": "MosoFin", "url": "https://www.mosofin.com/blog/quickbooks-price-increase-2026", "type": "3P — disagrees with Certum on prior Plus/Advanced figures" }
+    ]
+  },
+  {
+    "id": "figma-per-seat-pricing-overhaul",
+    "company": "Figma",
+    "headline": "Figma's per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise",
+    "date_display": "Mar 11, 2025",
+    "date_logged": "2026-08-21",
+    "tags": ["structural", "verified"],
+    "status_label": "Structural change",
+    "verification_label": "Verified",
+    "old_price": "Figma Design, Dev Mode, FigJam billed separately",
+    "new_price": "Unified seat types (Full/Dev/Collab), $16–$90/seat/mo",
+    "body": "The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal.",
+    "sources": [
+      { "name": "Figma — Professional plan pricing", "url": "https://www.figma.com/professional/", "type": "VENDOR" },
+      { "name": "Figma Help — Professional plan overview", "url": "https://help.figma.com/hc/en-us/articles/13839214115607-Professional-plan-overview", "type": "VENDOR" },
+      { "name": "Figma community forum", "url": "https://forum.figma.com/t/i-m-curious-about-the-differences-in-billing-methods-for-the-plans/94132", "type": "3P" }
+    ]
+  },
+  {
+    "id": "kit-creator-plan-repricing",
+    "company": "Kit",
+    "headline": "Kit retired its old $15 entry tier — and Creator now starts at $33/mo billed annually",
+    "date_display": "Sep 2025",
+    "date_logged": "2026-08-21",
+    "tags": ["increase", "disputed"],
+    "status_label": "Price increase",
+    "verification_label": "Current price verified · historical price third-party",
+    "old_price": "$15/mo (Creator, ~300 subscribers, legacy pricing)",
+    "new_price": "$33/mo annual, $39/mo monthly (Creator, 1,000 subscribers)",
+    "body": "This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's \"starts at $15\" is quoting a price that no longer exists for new signups.",
+    "sources": [
+      { "name": "Kit's own help center", "url": "https://help.kit.com/en/articles/4494683-creator-plan-vs-creator-pro", "type": "VENDOR" },
+      { "name": "Ecommerce-Platforms.com, published April 2024 — contemporaneous record of the $15/mo price while it was still current", "url": "https://ecommerce-platforms.com/articles/convertkit-pricing", "type": "3P" },
+      { "name": "BuyerSprint", "url": "https://buyersprint.com/2026/04/05/convertkit-pricing-2026/", "type": "3P" }
+    ]
+  }
+]
