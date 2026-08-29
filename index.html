@@ -180,29 +180,29 @@
     </div>
   </section>
 
-  <section class="section stats-strip" aria-label="This week's verification stats">
+  <section class="section stats-strip" aria-label="This week's verification stats — click a stat to filter the log">
     <div class="wrap">
       <div class="stats-grid">
-        <div class="stat-tile">
+        <button type="button" class="stat-tile" data-stat-filter="increase">
           <span class="stat-num n-increase">2</span>
           <span class="stat-label">Price increases</span>
-        </div>
-        <div class="stat-tile">
+        </button>
+        <button type="button" class="stat-tile" data-stat-filter="decrease">
           <span class="stat-num n-decrease">0</span>
           <span class="stat-label">Price decreases</span>
-        </div>
-        <div class="stat-tile">
+        </button>
+        <button type="button" class="stat-tile" data-stat-filter="structural">
           <span class="stat-num n-structural">4</span>
           <span class="stat-label">Structural changes</span>
-        </div>
-        <div class="stat-tile">
+        </button>
+        <button type="button" class="stat-tile" data-stat-filter="disputed">
           <span class="stat-num n-disputed">3</span>
           <span class="stat-label">Disputed figures</span>
-        </div>
-        <div class="stat-tile">
+        </button>
+        <button type="button" class="stat-tile" data-stat-filter="all">
           <span class="stat-num n-total">6</span>
           <span class="stat-label">Total verified changes</span>
-        </div>
+        </button>
       </div>
     </div>
   </section>
@@ -210,7 +210,7 @@
   <section class="section" id="log">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">The log</p>
+        <p class="eyebrow live-badge"><span class="live-dot" aria-hidden="true"></span> Live log — week of Aug 24–30, 2026</p>
         <h2>This week's changes</h2>
         <p>Every entry is verified against the vendor's current pricing page; historical "before" prices are separately sourced and labeled, since a vendor's own page rarely shows what something used to cost.</p>
       </div>
@@ -224,6 +224,7 @@
         <button type="button" class="filter-btn" data-filter="disputed">Disputed</button>
       </div>
       <p class="filter-empty" id="filter-empty" hidden>No entries match this filter yet — check back as new changes get logged.</p>
+
 
       <div class="log-list">
 
@@ -360,6 +361,21 @@
           </div>
         </li>
       </ol>
+
+      <div class="method-example">
+        <p class="method-example-label">Real example from this week's log</p>
+        <div class="diff-card" aria-label="QuickBooks Plus verification example">
+          <div class="diff-head">
+            <span>quiethike/verify</span>
+            <span class="diff-date">QuickBooks Online</span>
+          </div>
+          <div class="diff-line diff-context">01 → 02: found on QuickBooks' own pricing update page, not a reseller blog</div>
+          <div class="diff-line diff-removed">- ~$99–115/mo <span class="diff-label">(Plus, before Aug 1, 2026) <span class="src-tag">[3P — disputed]</span></span></div>
+          <div class="diff-line diff-added">+ $140/mo <span class="diff-label">(Plus, current, confirmed Aug 1, 2026) <span class="src-tag">[VENDOR]</span></span></div>
+          <div class="diff-line diff-context">03 → 04: renewal-date language checked against a live 90%-off promo, kept separate from the standard rate</div>
+          <div class="diff-line diff-context">05: published with the historical figure labeled disputed, not silently resolved</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -391,24 +407,36 @@
 
 <script>
 (function () {
-  // --- filter bar ---
+  // --- filter bar + clickable stats (shared logic) ---
   var filterBtns = document.querySelectorAll('.filter-btn');
+  var statTiles = document.querySelectorAll('.stat-tile');
   var entries = document.querySelectorAll('.log-entry[data-filter]');
   var emptyMsg = document.getElementById('filter-empty');
 
+  function applyFilter(filter) {
+    filterBtns.forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-filter') === filter);
+    });
+    var visibleCount = 0;
+    entries.forEach(function (entry) {
+      var tags = (entry.getAttribute('data-filter') || '').split(' ');
+      var match = filter === 'all' || tags.indexOf(filter) !== -1;
+      entry.hidden = !match;
+      if (match) visibleCount++;
+    });
+    emptyMsg.hidden = visibleCount !== 0;
+    document.getElementById('log').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-      var filter = btn.getAttribute('data-filter');
-      var visibleCount = 0;
-      entries.forEach(function (entry) {
-        var tags = (entry.getAttribute('data-filter') || '').split(' ');
-        var match = filter === 'all' || tags.indexOf(filter) !== -1;
-        entry.hidden = !match;
-        if (match) visibleCount++;
-      });
-      emptyMsg.hidden = visibleCount !== 0;
+      applyFilter(btn.getAttribute('data-filter'));
+    });
+  });
+
+  statTiles.forEach(function (tile) {
+    tile.addEventListener('click', function () {
+      applyFilter(tile.getAttribute('data-stat-filter'));
     });
   });
 
