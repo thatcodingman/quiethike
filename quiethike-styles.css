@@ -16,6 +16,10 @@
   --diff-red-bg: #23181a;
   --diff-green: #5a9d6f;
   --diff-green-bg: #172420;
+  --diff-amber: #c99a3f;
+  --diff-amber-bg: #241f14;
+  --diff-blue: #5b8fc9;
+  --diff-blue-bg: #141c24;
   --accent: #4fa89c;
   --line: #24322e;
   --line-strong: #34473f;
@@ -216,3 +220,65 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 20px; }
   .main-nav { gap: 16px; }
   .main-nav a { font-size: 0.68rem; }
 }
+
+/* ---------------- this week stats strip ---------------- */
+.stats-strip { padding: 0 0 8px; }
+.stats-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+}
+.stat-tile {
+  background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 14px; text-align: left;
+}
+.stat-num {
+  font-family: var(--font-mono); font-weight: 600; font-size: 1.5rem; line-height: 1; display: block; margin-bottom: 6px;
+}
+.stat-num.n-increase { color: var(--diff-red); }
+.stat-num.n-decrease { color: var(--diff-green); }
+.stat-num.n-structural { color: var(--diff-blue); }
+.stat-num.n-disputed { color: var(--diff-amber); }
+.stat-num.n-total { color: var(--accent); }
+.stat-label {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+@media (max-width: 860px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------------- filter bar ---------------- */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.filter-btn {
+  font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.03em; text-transform: uppercase;
+  background: transparent; color: var(--ink-soft); border: 1px solid var(--line-strong);
+  border-radius: 999px; padding: 7px 14px; cursor: pointer; min-height: 36px;
+}
+.filter-btn:hover { color: var(--ink); border-color: var(--accent); }
+.filter-btn.is-active { background: var(--accent); color: #0e1a18; border-color: var(--accent); font-weight: 600; }
+.filter-empty {
+  font-family: var(--font-mono); font-size: 0.86rem; color: var(--ink-soft);
+  padding: 30px 0; text-align: center; border: 1px dashed var(--line-strong); border-radius: var(--radius);
+}
+.log-entry[hidden] { display: none; }
+
+/* ---------------- expandable evidence cards ---------------- */
+.evidence-toggle {
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent);
+  background: transparent; border: none; padding: 6px 0 0; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.evidence-toggle:hover { text-decoration: underline; }
+.evidence-detail[hidden] { display: none; }
+.evidence-detail { margin-top: 10px; padding-top: 12px; border-top: 1px dashed var(--line); }
+
+/* ---------------- disputed badge ---------------- */
+.disputed-badge {
+  font-family: var(--font-mono); font-size: 0.72em; font-weight: 500;
+  background: var(--diff-amber-bg); color: var(--diff-amber); border: 1px solid rgba(201, 154, 63, 0.4);
+  border-radius: 2px; padding: 1px 6px; cursor: pointer;
+}
+.disputed-badge:hover { border-color: var(--diff-amber); }
+.disputed-note {
+  display: block; font-family: var(--font-body); font-size: 0.82rem; color: var(--ink-soft);
+  background: var(--diff-amber-bg); border-left: 2px solid var(--diff-amber);
+  padding: 8px 12px; margin-top: 8px; border-radius: 2px;
+}
+.disputed-note[hidden] { display: none; }
