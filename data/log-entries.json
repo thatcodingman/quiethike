@@ -83,8 +83,8 @@
     "status_label": "Structural change",
     "verification_label": "Verified",
     "old_price": "Figma Design, Dev Mode, FigJam billed separately",
-    "new_price": "Unified seat types (Full/Dev/Collab), $16–$90/seat/mo",
-    "body": "The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal.",
+    "new_price": "Unified seat types (Full/Dev/Collab), $3–$90/seat/mo depending on plan and seat type",
+    "body": "The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal. Per-seat pricing (as of Sep 2026) breaks down as: Professional — Full $16/mo, Dev $12/mo, Collab $3/mo; Organization — Full $55/mo, Dev $25/mo, Collab $5/mo; Enterprise — Full $90/mo, Dev $35/mo, Collab $5/mo. Figma Design itself can't be purchased separately — it's bundled into the Full seat alongside Dev Mode, FigJam, and Figma Slides.",
     "sources": [
       { "name": "Figma — Professional plan pricing", "url": "https://www.figma.com/professional/", "type": "VENDOR" },
       { "name": "Figma Help — Professional plan overview", "url": "https://help.figma.com/hc/en-us/articles/13839214115607-Professional-plan-overview", "type": "VENDOR" },
@@ -102,11 +102,12 @@
     "verification_label": "Current price verified · historical price third-party",
     "old_price": "$15/mo (Creator, ~300 subscribers, legacy pricing)",
     "new_price": "$33/mo annual, $39/mo monthly (Creator, 1,000 subscribers)",
-    "body": "This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's \"starts at $15\" is quoting a price that no longer exists for new signups.",
+    "body": "This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's \"starts at $15\" is quoting a price that no longer exists for new signups. Separately: as of September 2026, Kit's higher tier is mid-rebrand — its current marketing page is titled \"Kit Pro,\" while the linked help-center article and the page's own URL slug still say \"Creator Pro.\" At 1,000 subscribers, Pro currently starts at $79/month, or $66/month equivalent billed annually.",
     "sources": [
       { "name": "Kit's own help center", "url": "https://help.kit.com/en/articles/4494683-creator-plan-vs-creator-pro", "type": "VENDOR" },
       { "name": "Ecommerce-Platforms.com, published April 2024 — contemporaneous record of the $15/mo price while it was still current", "url": "https://ecommerce-platforms.com/articles/convertkit-pricing", "type": "3P" },
-      { "name": "BuyerSprint", "url": "https://buyersprint.com/2026/04/05/convertkit-pricing-2026/", "type": "3P" }
+      { "name": "BuyerSprint", "url": "https://buyersprint.com/2026/04/05/convertkit-pricing-2026/", "type": "3P" },
+      { "name": "Kit Pro marketing page", "url": "https://kit.com/features/creator-pro", "type": "VENDOR — Pro rebrand and current pricing" }
     ]
   }
 ]
