@@ -77,6 +77,31 @@ def rss_for_vendor(v):
 </channel>
 </rss>
 '''
+def related_vendors_block(v):
+    others = [o for o in vendors if o['slug'] != v['slug']]
+    if not others:
+        return ''
+    rows = '\n'.join(f'''          <tr>
+            <th scope="row"><a href="{o["slug"]}.html">{e(o["name"])}</a></th>
+            <td>{e(o["tracks"])}</td>
+            <td class="snap-price">{e(o["current"])}</td>
+            <td class="snap-date">{nice(o["last_verified"])}</td>
+          </tr>''' for o in others)
+    return f'''  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Also tracking</h2><p>Other vendors on QuietHike, and their current verified price.</p></div>
+      <div class="snap-wrap">
+        <table class="snap-table">
+          <thead><tr><th scope="col">Vendor</th><th scope="col">Tracking</th><th scope="col">Current price</th><th scope="col">Last rechecked</th></tr></thead>
+          <tbody>
+{rows}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+'''
+
 def render_compare(c):
     cols = c['columns']
     head = ''.join(f'<th scope="col">{e(col)}</th>' for col in cols)
@@ -184,7 +209,7 @@ def page(v):
       <p class="log-source" style="margin-top:28px;"><a href="index.html" style="color: var(--accent);">← Back to all price changes</a> · <a href="rss.xml" style="color: var(--accent);">RSS</a></p>
     </div>
   </section>
-</main>
+{related_vendors_block(v)}</main>
 <footer>
   <div class="wrap foot-grid">
     <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
