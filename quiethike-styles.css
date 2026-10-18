@@ -422,3 +422,20 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 20px; }
   .signup-form { flex-direction: column; }
   .signup-input { min-width: 0; }
 }
+
+/* Timeline page */
+.timeline-wrap { position: relative; padding-left: 28px; }
+.timeline-wrap::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--line-strong); }
+.timeline-month { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 36px 0 14px; position: relative; }
+.timeline-month:first-child { margin-top: 0; }
+.timeline-month::before { content: ''; position: absolute; left: -28px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+.timeline-item { position: relative; padding: 16px 18px; margin-bottom: 14px; background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 22px; width: 7px; height: 7px; border-radius: 50%; background: var(--line-strong); }
+.timeline-item.tl-up::before { background: var(--diff-red); }
+.timeline-item.tl-down::before { background: var(--diff-green); }
+.timeline-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+.timeline-vendor { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); }
+.timeline-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+.timeline-item h3 { margin: 0 0 6px; font-size: 1rem; }
+.timeline-item h3 a { color: var(--ink); text-decoration: none; }
+.timeline-item h3 a:hover { color: var(--accent); }

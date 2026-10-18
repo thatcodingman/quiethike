@@ -116,6 +116,7 @@ def page(v):
     <nav class="main-nav">
       <a href="index.html#log">All changes</a>
       <a href="index.html#snapshot">Prices</a>
+      <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">How we verify</a>
       <a href="index.html#subscribe">Subscribe</a>
     </nav>
@@ -149,7 +150,9 @@ def page(v):
     <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
     <nav class="foot-links">
       <a href="index.html#log">This week</a>
+      <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
+      <a href="corrections.html">Corrections</a>
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
       <a href="rss.xml">RSS</a>
@@ -187,6 +190,113 @@ document.querySelectorAll('.evidence-toggle').forEach(function (btn) {{
 }});
 if (location.hash) {{ var t = document.querySelector(location.hash); if (t) {{ var b = t.querySelector('.evidence-toggle'); if (b) b.click(); }} }}
 </script>
+</body>
+</html>
+'''
+def timeline_page():
+    slug_by_match = {v['match']: v['slug'] for v in vendors}
+    xs = sorted(entries, key=lambda x: x['date_logged'], reverse=True)
+    n = len(xs)
+    url = 'https://quiethike.com/timeline.html'
+    title = 'Full Timeline — QuietHike'
+    desc = f'Every quiet pricing change QuietHike has logged and verified, in one chronological timeline. {n} entries across {len(vendors)} vendors.'
+    def month_key(x):
+        d = datetime.date.fromisoformat(x['date_logged'])
+        return (d.year, d.month)
+    def month_label(k):
+        return datetime.date(k[0], k[1], 1).strftime('%B %Y')
+    def item(x):
+        tagcls = 'tl-up' if any(t in x['tags'] for t in ('structural','increase')) else 'tl-down'
+        slug = slug_by_match.get(x['company'])
+        href = f'{slug}.html#{e(x["id"])}' if slug else f'index.html#{e(x["id"])}'
+        return f'''      <article class="timeline-item {tagcls}">
+        <div class="timeline-head">
+          <span class="timeline-vendor">{e(x["company"])}</span>
+          <span class="timeline-date">{e(x["date_display"])}</span>
+        </div>
+        <h3><a href="{href}">{e(x["headline"])}</a></h3>
+        <div class="diff-line diff-removed" style="margin-bottom:4px;">- {e(x["old_price"])}</div>
+        <div class="diff-line diff-added">+ {e(x["new_price"])}</div>
+      </article>'''
+    groups = []
+    last_key = None
+    for x in xs:
+        k = month_key(x)
+        if k != last_key:
+            groups.append(f'      <p class="timeline-month">{month_label(k)}</p>')
+            last_key = k
+        groups.append(item(x))
+    body = '\n'.join(groups)
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content="{e(desc)}">
+<link rel="canonical" href="{url}">
+<meta property="og:title" content="{title}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{url}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:site_name" content="QuietHike">
+<meta property="og:image" content="https://quiethike.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#131d1a">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="alternate" type="application/rss+xml" title="QuietHike — Price Change Log" href="https://quiethike.com/rss.xml">
+{GA}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="quiethike-styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="mark">▲▼</span> QuietHike</a>
+    <nav class="main-nav">
+      <a href="index.html#snapshot">Prices</a>
+      <a href="index.html#log">This week</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="index.html#methodology">How we verify</a>
+      <a href="index.html#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">QuietHike</a> / Timeline</p>
+      <h1>The full timeline</h1>
+      <p>Every quiet pricing change we've caught and verified, newest first. {n} entries across {len(vendors)} vendors.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="timeline-wrap">
+{body}
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
+    <nav class="foot-links">
+      <a href="index.html#log">This week</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="index.html#methodology">Methodology</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="rss.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>
 '''
@@ -248,6 +358,7 @@ def corrections_page():
     <nav class="main-nav">
       <a href="index.html#snapshot">Prices</a>
       <a href="index.html#log">All changes</a>
+      <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">How we verify</a>
       <a href="index.html#subscribe">Subscribe</a>
     </nav>
@@ -272,6 +383,7 @@ def corrections_page():
     <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
     <nav class="foot-links">
       <a href="index.html#log">This week</a>
+      <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
       <a href="corrections.html">Corrections</a>
       <a href="terms.html">Terms</a>
@@ -287,11 +399,13 @@ def corrections_page():
 for v in vendors:
     (root/f'{v["slug"]}.html').write_text(page(v), encoding='utf-8')
 (root/'corrections.html').write_text(corrections_page(), encoding='utf-8')
+(root/'timeline.html').write_text(timeline_page(), encoding='utf-8')
 today = max(v['last_verified'] for v in vendors)
 urls = [('https://quiethike.com/', today, 'weekly', '1.0')] + \
        [(f'https://quiethike.com/{v["slug"]}.html', v['last_verified'], 'weekly', '0.8') for v in vendors] + \
+       [('https://quiethike.com/timeline.html', today, 'weekly', '0.6')] + \
        [('https://quiethike.com/corrections.html', today, 'weekly', '0.4')] + \
        [('https://quiethike.com/terms.html','2026-08-21','yearly','0.3'),('https://quiethike.com/privacy.html','2026-08-21','yearly','0.3')]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{u}</loc><lastmod>{l}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority></url>\n' for u,l,c,p in urls) + '</urlset>\n'
 (root/'sitemap.xml').write_text(sm, encoding='utf-8')
-print('built', len(vendors), 'vendor pages + corrections page + sitemap')
+print('built', len(vendors), 'vendor pages + corrections page + timeline page + sitemap')
