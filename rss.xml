@@ -9,11 +9,11 @@
   <atom:link href="https://quiethike.com/rss.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>Salesforce's Core/Advanced/Max editions have gone from announced to live — on one pricing page</title>
+    <title>Salesforce's Core/Advanced/Max editions are now live on one pricing page</title>
     <link>https://quiethike.com/#salesforce-agentforce-editions-live-2026-09</link>
     <guid isPermaLink="true">https://quiethike.com/#salesforce-agentforce-editions-live-2026-09</guid>
     <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
-    <description>The prices themselves haven't moved since the September 3 announcement — what's changed is status. Salesforce's Sales Cloud pricing page now lists Core, Advanced, and Max as active editions with the same figures as announced: $195/$395/$550 per user/month, billed annually, with 500,000/1,000,000/2,750,000 Flex Credits per org per year respectively. Core and Advanced carry "Try for free" buttons; Max requires contacting sales. One inconsistency worth flagging: Salesforce's dedicated Agentforce pricing page (the one this site has sourced for the $125/mo add-on and Agentforce 1 Editions) still doesn't mention Core, Advanced, or Max by name at all — the new editions currently live only on the Sales product pricing page. We could not confirm Salesforce's own claim that existing Agentforce 1 Edition customers get a free upgrade to Max, and no specific effective date is stated anywhere we checked — both remain unconfirmed.</description>
+    <description>The prices themselves haven't moved since the September 3 announcement. What changed is the status: Salesforce's Sales Cloud pricing page now lists Core, Advanced, and Max as active editions at $195/$395/$550 per user/month, billed annually, with 500,000/1,000,000/2,750,000 Flex Credits per org per year respectively. Salesforce's dedicated Agentforce pricing page still doesn't mention these editions by name; they currently live only on the Sales product pricing page. Salesforce's claim that existing Agentforce 1 Edition customers get a free upgrade to Max, and any specific effective date, remain unconfirmed.</description>
   </item>
 
   <item>
@@ -21,7 +21,7 @@
     <link>https://quiethike.com/#salesforce-agentforce-editions-2026-09</link>
     <guid isPermaLink="true">https://quiethike.com/#salesforce-agentforce-editions-2026-09</guid>
     <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
-    <description>On September 3, 2026, Salesforce announced a new three-tier Agentforce Industry Edition structure — Core, Advanced, and Max — each priced per user per month and bundling a fixed amount of Flex Credits per org per year, rather than leaving credit usage entirely consumption-based. Salesforce says pricing on existing legacy editions is unchanged, and the new editions are rolling out "later this fall" rather than immediately. Salesforce's announcement doesn't clarify how these relate to the Agentforce 1 Editions or the standalone $125/user/month add-on covered in our earlier entries — whether they're replaced, renamed, or simply run alongside the new editions is unconfirmed, so we're not asserting a replacement here.</description>
+    <description>On September 3, 2026, Salesforce announced a new three-tier Agentforce Industry Edition structure: Core, Advanced, and Max. Each tier is priced per user per month and bundles a fixed amount of Flex Credits per org per year, rather than leaving credit usage entirely consumption-based. Salesforce says pricing on existing legacy editions is unchanged, and the new editions are rolling out "later this fall." Whether these replace, rename, or simply run alongside the $125/user/month add-on and Agentforce 1 Editions covered in our earlier entries is unconfirmed.</description>
   </item>
 
   <item>
@@ -29,15 +29,15 @@
     <link>https://quiethike.com/#salesforce-agentforce-packaging-2026-08</link>
     <guid isPermaLink="true">https://quiethike.com/#salesforce-agentforce-packaging-2026-08</guid>
     <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
-    <description>The $125/user/month Agentforce add-on hasn't been replaced — it's still listed for Sales and Service. What's changed is the packaging around it: Salesforce now also sells consumption-based Flex Credits, per-conversation pricing, a much pricier all-in Agentforce 1 Edition tier, and a low-cost per-user license that still requires buying Flex Credits separately. For buyers, $125 is now one option inside a wider menu rather than the only current path to Agentforce.</description>
+    <description>The $125/user/month Agentforce add-on hasn't been replaced; it's still listed for Sales and Service. What changed is the packaging around it: Salesforce now also sells consumption-based Flex Credits, per-conversation pricing, a much pricier all-in Agentforce 1 Edition tier, and a low-cost per-user license that still requires buying Flex Credits separately. For buyers, $125 is now one option inside a wider menu, not the only current path to Agentforce.</description>
   </item>
 
   <item>
-    <title>Atlassian is sunsetting Data Center outright — and Cloud migration isn't a like-for-like cost swap</title>
+    <title>Atlassian is sunsetting Data Center outright; Cloud migration isn't a like-for-like cost swap</title>
     <link>https://quiethike.com/#atlassian-data-center-sunset</link>
     <guid isPermaLink="true">https://quiethike.com/#atlassian-data-center-sunset</guid>
     <pubDate>Tue, 25 Aug 2026 11:00:00 GMT</pubDate>
-    <description>Atlassian is retiring Data Center entirely on a three-year phased timeline. Bitbucket Data Center keeps a separate hybrid license. A 10-20% first-year Cloud Enterprise discount is offered through June 2027, but independent analysis puts the average Cloud premium at around 28% — a figure Atlassian itself has not published or confirmed.</description>
+    <description>Atlassian is retiring Data Center entirely on a three-year phased timeline rather than just raising its price. Bitbucket Data Center is the one exception, keeping a separate hybrid license. Atlassian is offering a 10-20% first-year discount on Cloud Enterprise through June 2027, but independent analysis puts the average Cloud premium closer to 28% — a figure Atlassian itself has not published or confirmed.</description>
   </item>
 
   <item>
@@ -45,31 +45,31 @@
     <link>https://quiethike.com/#salesforce-einstein-to-agentforce</link>
     <guid isPermaLink="true">https://quiethike.com/#salesforce-einstein-to-agentforce</guid>
     <pubDate>Fri, 21 Aug 2026 12:00:00 GMT</pubDate>
-    <description>This is an add-on price on top of the underlying Salesforce edition, not a replacement for Salesforce's core CRM subscription. Agentforce usage outside unmetered employee-agent activity is now tracked through a separate Flex Credits system, so the $125/month sticker price doesn't mean unlimited AI usage.</description>
+    <description>This is an add-on price on top of the underlying Salesforce edition, not a replacement for Salesforce's core CRM subscription. Salesforce announced the Einstein-to-Agentforce replacement publicly in August 2025, so it's not a hidden pricing-page swap, but Agentforce usage outside unmetered employee-agent activity is now tracked through a separate Flex Credits system — the $125/month sticker price doesn't mean unlimited AI usage.</description>
   </item>
 
   <item>
-    <title>QuickBooks raises affected Essentials, Plus, and Advanced subscriptions at renewal — but not Simple Start</title>
+    <title>QuickBooks raises affected Essentials, Plus, and Advanced subscriptions at renewal, not Simple Start</title>
     <link>https://quiethike.com/#quickbooks-online-price-increase-2026</link>
     <guid isPermaLink="true">https://quiethike.com/#quickbooks-online-price-increase-2026</guid>
     <pubDate>Fri, 21 Aug 2026 11:00:00 GMT</pubDate>
-    <description>QuickBooks Online raised prices for Essentials, Plus, and Advanced at renewals on or after August 1, 2026 — Simple Start, Free, Lite, and Ledger were not part of this increase, per QuickBooks' own announcement. Essentials rose to $85/mo, Plus to $140/mo, and Advanced to $340/mo.</description>
+    <description>QuickBooks Online raised prices for Essentials, Plus, and Advanced at renewals on or after August 1, 2026. Simple Start, Free, Lite, and Ledger were not part of this increase, per QuickBooks' own announcement. Essentials rose to $85/mo and Advanced to $340/mo. Prepaid annual subscribers generally keep their existing rate until the current term ends.</description>
   </item>
 
   <item>
-    <title>Figma's per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise</title>
+    <title>Figma's per-product pricing became per-seat, and monthly billing disappeared from Organization and Enterprise</title>
     <link>https://quiethike.com/#figma-per-seat-pricing-overhaul</link>
     <guid isPermaLink="true">https://quiethike.com/#figma-per-seat-pricing-overhaul</guid>
     <pubDate>Fri, 21 Aug 2026 10:00:00 GMT</pubDate>
-    <description>The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul.</description>
+    <description>The bigger story isn't the sticker price: it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal.</description>
   </item>
 
   <item>
-    <title>Kit retired its old $15 entry tier — and Creator now starts at $33/mo billed annually</title>
+    <title>Kit retired its old $15 entry tier; Creator now starts at $33/mo billed annually</title>
     <link>https://quiethike.com/#kit-creator-plan-repricing</link>
     <guid isPermaLink="true">https://quiethike.com/#kit-creator-plan-repricing</guid>
     <pubDate>Fri, 21 Aug 2026 09:00:00 GMT</pubDate>
-    <description>This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</description>
+    <description>This wasn't a gradual increase. The old low-tier pricing structure was retired outright in the September 2025 repricing, and anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</description>
   </item>
 
 </channel>
