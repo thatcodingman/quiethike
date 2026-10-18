@@ -9,11 +9,11 @@
   <atom:link href="https://quiethike.com/atlassian-rss.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>Atlassian is sunsetting Data Center outright — and Cloud migration isn&#x27;t a like-for-like cost swap</title>
+    <title>Atlassian is sunsetting Data Center outright; Cloud migration isn&#x27;t a like-for-like cost swap</title>
     <link>https://quiethike.com/atlassian.html#atlassian-data-center-sunset</link>
     <guid isPermaLink="true">https://quiethike.com/atlassian.html#atlassian-data-center-sunset</guid>
     <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
-    <description>Atlassian is retiring Data Center entirely on a three-year phased timeline rather than just raising its price. Bitbucket Data Center is the one exception — it keeps a separate hybrid license instead of following the sunset schedule. Atlassian is offering a 10–20% first-year discount on Cloud Enterprise for customers who migrate by June 2027, but that incentive doesn&#x27;t fully offset the underlying cost shift: independent analysis puts the average Cloud premium over equivalent Data Center pricing at around 28%, a figure Atlassian itself has not published or confirmed on its own pricing pages.</description>
+    <description>Atlassian is retiring Data Center entirely on a three-year phased timeline rather than just raising its price. Bitbucket Data Center is the one exception: it keeps a separate hybrid license instead of following the sunset schedule. Atlassian is offering a 10–20% first-year discount on Cloud Enterprise for customers who migrate by June 2027, but that incentive doesn&#x27;t fully offset the underlying cost shift: independent analysis puts the average Cloud premium over equivalent Data Center pricing at around 28%, a figure Atlassian itself has not published or confirmed on its own pricing pages.</description>
   </item>
 
 </channel>
