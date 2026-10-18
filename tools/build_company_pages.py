@@ -181,7 +181,7 @@ def page(v):
       <a href="index.html#log">All changes</a>
       <a href="index.html#snapshot">Prices</a>
       <a href="timeline.html">Timeline</a>
-      <a href="index.html#methodology">How we verify</a>
+      <a href="methodology.html">How we verify</a>
       <a href="index.html#subscribe">Subscribe</a>
     </nav>
   </div>
@@ -216,7 +216,7 @@ def page(v):
     <nav class="foot-links">
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
-      <a href="index.html#methodology">Methodology</a>
+      <a href="methodology.html">Methodology</a>
       <a href="index.html#faq">FAQ</a>
       <a href="corrections.html">Corrections</a>
       <a href="suggest.html">Suggest a vendor</a>
@@ -330,7 +330,7 @@ def timeline_page():
       <a href="index.html#snapshot">Prices</a>
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
-      <a href="index.html#methodology">How we verify</a>
+      <a href="methodology.html">How we verify</a>
       <a href="index.html#subscribe">Subscribe</a>
     </nav>
   </div>
@@ -357,7 +357,7 @@ def timeline_page():
     <nav class="foot-links">
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
-      <a href="index.html#methodology">Methodology</a>
+      <a href="methodology.html">Methodology</a>
       <a href="index.html#faq">FAQ</a>
       <a href="corrections.html">Corrections</a>
       <a href="suggest.html">Suggest a vendor</a>
@@ -430,7 +430,7 @@ def corrections_page():
       <a href="index.html#snapshot">Prices</a>
       <a href="index.html#log">All changes</a>
       <a href="timeline.html">Timeline</a>
-      <a href="index.html#methodology">How we verify</a>
+      <a href="methodology.html">How we verify</a>
       <a href="index.html#subscribe">Subscribe</a>
     </nav>
   </div>
@@ -455,7 +455,7 @@ def corrections_page():
     <nav class="foot-links">
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
-      <a href="index.html#methodology">Methodology</a>
+      <a href="methodology.html">Methodology</a>
       <a href="index.html#faq">FAQ</a>
       <a href="corrections.html">Corrections</a>
       <a href="suggest.html">Suggest a vendor</a>
@@ -479,6 +479,7 @@ urls = [('https://quiethike.com/', today, 'weekly', '1.0')] + \
        [(f'https://quiethike.com/{v["slug"]}.html', v['last_verified'], 'weekly', '0.8') for v in vendors] + \
        [('https://quiethike.com/timeline.html', today, 'weekly', '0.6')] + \
        [('https://quiethike.com/corrections.html', today, 'weekly', '0.4')] + \
+       [('https://quiethike.com/methodology.html', today, 'monthly', '0.5')] + \
        [('https://quiethike.com/suggest.html', today, 'monthly', '0.3')] + \
        [('https://quiethike.com/terms.html','2026-08-21','yearly','0.3'),('https://quiethike.com/privacy.html','2026-08-21','yearly','0.3')]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{u}</loc><lastmod>{l}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority></url>\n' for u,l,c,p in urls) + '</urlset>\n'
