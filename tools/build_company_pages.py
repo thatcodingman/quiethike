@@ -160,12 +160,107 @@ if (location.hash) {{ var t = document.querySelector(location.hash); if (t) {{ v
 </body>
 </html>
 '''
+def corrections_page():
+    corrected = [x for x in entries if x.get('correction_note')]
+    corrected.sort(key=lambda x: x['date_logged'], reverse=True)
+    n = len(corrected)
+    url = 'https://quiethike.com/corrections.html'
+    title = 'Corrections — QuietHike'
+    desc = f'Every correction QuietHike has made to a published entry, left visible with what changed and why. {n} correction{"s" if n!=1 else ""} on record.'
+    def row(x):
+        return f'''      <article class="log-entry" id="correction-{e(x["id"])}">
+        <div class="log-meta">
+          <span class="log-date">{e(x["date_display"])}</span>
+          <span class="log-tag tag-partial">Correction</span>
+        </div>
+        <h3>{e(x["headline"])}</h3>
+        <p class="log-body">{e(x["correction_note"])}</p>
+        <p class="log-source"><a href="index.html#{e(x["id"])}" style="color: var(--accent);">See the corrected entry →</a></p>
+      </article>'''
+    if corrected:
+        body = f'''      <div class="section-head"><h2>{n} correction{"s" if n!=1 else ""} on record</h2><p>Each one is left attached to the entry it corrects — nothing is quietly edited or removed.</p></div>
+      <div class="log-list">
+{chr(10).join(row(x) for x in corrected)}
+      </div>'''
+    else:
+        body = '''      <div class="section-head"><h2>No corrections on record</h2><p>When we get something wrong, it will be logged here with what changed and why — nothing gets quietly edited or removed.</p></div>'''
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content="{e(desc)}">
+<link rel="canonical" href="{url}">
+<meta property="og:title" content="{title}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{url}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:site_name" content="QuietHike">
+<meta property="og:image" content="https://quiethike.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#131d1a">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="alternate" type="application/rss+xml" title="QuietHike — Price Change Log" href="https://quiethike.com/rss.xml">
+{GA}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="quiethike-styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="mark">▲▼</span> QuietHike</a>
+    <nav class="main-nav">
+      <a href="index.html#snapshot">Prices</a>
+      <a href="index.html#log">All changes</a>
+      <a href="index.html#methodology">How we verify</a>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">QuietHike</a> / Corrections</p>
+      <h1>Corrections</h1>
+      <p>QuietHike is only useful if it's accurate. When we publish something wrong, we don't quietly fix it and move on — the correction stays attached to the entry, and it's listed here too.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+{body}
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
+    <nav class="foot-links">
+      <a href="index.html#log">This week</a>
+      <a href="index.html#methodology">Methodology</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="rss.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
+'''
+
 for v in vendors:
     (root/f'{v["slug"]}.html').write_text(page(v), encoding='utf-8')
+(root/'corrections.html').write_text(corrections_page(), encoding='utf-8')
 today = max(v['last_verified'] for v in vendors)
 urls = [('https://quiethike.com/', today, 'weekly', '1.0')] + \
        [(f'https://quiethike.com/{v["slug"]}.html', v['last_verified'], 'weekly', '0.8') for v in vendors] + \
+       [('https://quiethike.com/corrections.html', today, 'weekly', '0.4')] + \
        [('https://quiethike.com/terms.html','2026-08-21','yearly','0.3'),('https://quiethike.com/privacy.html','2026-08-21','yearly','0.3')]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{u}</loc><lastmod>{l}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority></url>\n' for u,l,c,p in urls) + '</urlset>\n'
 (root/'sitemap.xml').write_text(sm, encoding='utf-8')
-print('built', len(vendors), 'vendor pages + sitemap')
+print('built', len(vendors), 'vendor pages + corrections page + sitemap')
