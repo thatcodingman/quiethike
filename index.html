@@ -64,6 +64,44 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does QuietHike verify a price change?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every change is checked against the vendor's own current pricing page before it's logged — never a third-party blog alone. The \"before\" price gets the same scrutiny, sourced from an archived page, a prior independent tracker, or the vendor's own changelog." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is QuietHike affiliated with any of the vendors it covers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. QuietHike is not affiliated with, and does not receive payment from, any vendor mentioned. No vendor pays to be covered, and no vendor pays to be left out. Always confirm current pricing directly with the vendor before purchasing." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do the VENDOR, 3P, and \"disputed\" tags mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "[VENDOR] means a source is the vendor's own page. [3P] means a third-party source (forum, changelog mirror, independent tracker). [3P — disputed] marks a figure we could source but couldn't confirm against the vendor directly — it's published as-is but flagged, not silently treated as fact. [UNABLE TO VERIFY] means we found a claim but couldn't confirm it anywhere reliable." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if QuietHike gets something wrong?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We don't quietly edit it. A correction stays attached to the original entry with what changed and why, and it's also listed on the Corrections page so nothing gets memory-holed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I follow just one vendor instead of everything?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — every vendor page has its own RSS feed with just that company's changes. Look for \"Follow only [vendor] (RSS)\" near the top of any vendor page." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I suggest a vendor to track?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, on the Suggest a vendor page. Tell us the vendor and their pricing page, and we'll check it against their own pages before adding anything." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "QuietHike price-change log",
   "itemListElement": [
@@ -585,6 +623,41 @@
     </div>
   </section>
 
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How does QuietHike verify a price change?</summary>
+          <div class="faq-answer"><p>Every change is checked against the vendor's own current pricing page before it's logged — never a third-party blog alone. The "before" price gets the same scrutiny, sourced from an archived page, a prior independent tracker, or the vendor's own changelog. See the <a href="#methodology">full methodology</a> above.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Is QuietHike affiliated with any of the vendors it covers?</summary>
+          <div class="faq-answer"><p>No. QuietHike is not affiliated with, and does not receive payment from, any vendor mentioned. No vendor pays to be covered, and no vendor pays to be left out. Always confirm current pricing directly with the vendor before purchasing.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What do the VENDOR, 3P, and "disputed" tags mean?</summary>
+          <div class="faq-answer"><p><strong>[VENDOR]</strong> means a source is the vendor's own page. <strong>[3P]</strong> means a third-party source (forum, changelog mirror, independent tracker). <strong>[3P — disputed]</strong> marks a figure we could source but couldn't confirm against the vendor directly — it's published as-is but flagged, not silently treated as fact. <strong>[UNABLE TO VERIFY]</strong> means we found a claim but couldn't confirm it anywhere reliable.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What happens if QuietHike gets something wrong?</summary>
+          <div class="faq-answer"><p>We don't quietly edit it. A correction stays attached to the original entry with what changed and why, and it's also listed on the <a href="corrections.html">Corrections page</a> so nothing gets memory-holed.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I follow just one vendor instead of everything?</summary>
+          <div class="faq-answer"><p>Yes — every vendor page has its own RSS feed with just that company's changes. Look for "Follow only [vendor] (RSS)" near the top of any vendor page.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I suggest a vendor to track?</summary>
+          <div class="faq-answer"><p>Yes, on the <a href="suggest.html">Suggest a vendor</a> page. Tell us the vendor and their pricing page, and we'll check it against their own pages before adding anything.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="subscribe">
     <div class="wrap">
       <div class="signup-card">
@@ -623,6 +696,7 @@
       <a href="#log">This week</a>
       <a href="timeline.html">Timeline</a>
       <a href="#methodology">Methodology</a>
+      <a href="#faq">FAQ</a>
       <a href="#about">About</a>
       <a href="corrections.html">Corrections</a>
       <a href="suggest.html">Suggest a vendor</a>

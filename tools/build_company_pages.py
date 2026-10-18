@@ -188,6 +188,7 @@ def page(v):
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="corrections.html">Corrections</a>
       <a href="suggest.html">Suggest a vendor</a>
       <a href="terms.html">Terms</a>
@@ -328,6 +329,7 @@ def timeline_page():
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="corrections.html">Corrections</a>
       <a href="suggest.html">Suggest a vendor</a>
       <a href="terms.html">Terms</a>
@@ -425,6 +427,7 @@ def corrections_page():
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="corrections.html">Corrections</a>
       <a href="suggest.html">Suggest a vendor</a>
       <a href="terms.html">Terms</a>
