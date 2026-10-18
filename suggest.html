@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suggest a Vendor to Track — QuietHike</title>
+<meta name="description" content="Tell QuietHike which SaaS vendor's pricing you want tracked and verified. We'll check it against the vendor's own pages before adding it.">
+<link rel="canonical" href="https://quiethike.com/suggest.html">
+<meta property="og:title" content="Suggest a Vendor to Track — QuietHike">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quiethike.com/suggest.html">
+<meta property="og:description" content="Tell QuietHike which SaaS vendor's pricing you want tracked and verified.">
+<meta property="og:site_name" content="QuietHike">
+<meta property="og:image" content="https://quiethike.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#131d1a">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="alternate" type="application/rss+xml" title="QuietHike — Price Change Log" href="https://quiethike.com/rss.xml">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3KLNY8ZB2S"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-3KLNY8ZB2S");</script>
+<meta name="google-adsense-account" content="ca-pub-8828337552440063">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="quiethike-styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="mark">▲▼</span> QuietHike</a>
+    <nav class="main-nav">
+      <a href="index.html#snapshot">Prices</a>
+      <a href="index.html#log">This week</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="index.html#methodology">How we verify</a>
+      <a href="index.html#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">QuietHike</a> / Suggest a vendor</p>
+      <h1>Suggest a vendor to track</h1>
+      <p>Know a SaaS tool that keeps changing its pricing quietly? Tell us which one. We check every suggestion against the vendor's own pricing page before adding it — no vendor pays to be covered, and no vendor pays to be left out.</p>
+
+      <form class="suggest-form" name="vendor-suggestion" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks-suggest.html">
+        <input type="hidden" name="form-name" value="vendor-suggestion">
+        <p class="signup-hp"><label>Don't fill this out if you're human: <input name="company" /></label></p>
+
+        <div class="suggest-field">
+          <label for="sv-name">Vendor name <span class="req">*</span></label>
+          <input type="text" id="sv-name" name="vendor_name" class="signup-input" required placeholder="e.g. Notion">
+        </div>
+
+        <div class="suggest-field">
+          <label for="sv-url">Their pricing page URL <span class="req">*</span></label>
+          <input type="url" id="sv-url" name="pricing_url" class="signup-input" required placeholder="https://example.com/pricing">
+        </div>
+
+        <div class="suggest-field">
+          <label for="sv-why">What changed, or why it's worth tracking</label>
+          <textarea id="sv-why" name="reason" class="suggest-textarea" placeholder="Optional — any detail helps, like what changed and when you noticed it."></textarea>
+        </div>
+
+        <div class="suggest-field">
+          <label for="sv-email">Your email</label>
+          <input type="email" id="sv-email" name="email" class="signup-input" placeholder="Optional — only if you want a reply">
+        </div>
+
+        <button type="submit" class="btn btn-primary suggest-submit">Submit suggestion</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
+    <nav class="foot-links">
+      <a href="index.html#log">This week</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="index.html#methodology">Methodology</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="suggest.html">Suggest a vendor</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="rss.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

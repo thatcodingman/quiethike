@@ -153,6 +153,7 @@ def page(v):
       <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
       <a href="corrections.html">Corrections</a>
+      <a href="suggest.html">Suggest a vendor</a>
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
       <a href="rss.xml">RSS</a>
@@ -291,6 +292,7 @@ def timeline_page():
       <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
       <a href="corrections.html">Corrections</a>
+      <a href="suggest.html">Suggest a vendor</a>
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
       <a href="rss.xml">RSS</a>
@@ -386,6 +388,7 @@ def corrections_page():
       <a href="timeline.html">Timeline</a>
       <a href="index.html#methodology">Methodology</a>
       <a href="corrections.html">Corrections</a>
+      <a href="suggest.html">Suggest a vendor</a>
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
       <a href="rss.xml">RSS</a>
@@ -405,6 +408,7 @@ urls = [('https://quiethike.com/', today, 'weekly', '1.0')] + \
        [(f'https://quiethike.com/{v["slug"]}.html', v['last_verified'], 'weekly', '0.8') for v in vendors] + \
        [('https://quiethike.com/timeline.html', today, 'weekly', '0.6')] + \
        [('https://quiethike.com/corrections.html', today, 'weekly', '0.4')] + \
+       [('https://quiethike.com/suggest.html', today, 'monthly', '0.3')] + \
        [('https://quiethike.com/terms.html','2026-08-21','yearly','0.3'),('https://quiethike.com/privacy.html','2026-08-21','yearly','0.3')]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{u}</loc><lastmod>{l}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority></url>\n' for u,l,c,p in urls) + '</urlset>\n'
 (root/'sitemap.xml').write_text(sm, encoding='utf-8')
