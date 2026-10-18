@@ -74,11 +74,13 @@ def page(v):
 {GA}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="quiethike-styles.css">
 <script type="application/ld+json">{bc}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"ItemList","name":"{e(v["name"])} price changes","itemListElement":[{ld_items}]}}</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header">
   <div class="wrap">
     <a href="index.html" class="logo"><span class="mark">▲▼</span> QuietHike</a>
@@ -89,7 +91,7 @@ def page(v):
     </nav>
   </div>
 </header>
-<main>
+<main id="main-content">
   <section class="page-hero">
     <div class="wrap">
       <p class="crumbs"><a href="index.html">QuietHike</a> / {e(v["name"])}</p>
