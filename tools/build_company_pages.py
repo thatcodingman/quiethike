@@ -126,8 +126,12 @@ def page(v):
 <meta property="og:url" content="{url}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:site_name" content="QuietHike">
-<meta property="og:image" content="https://quiethike.com/og-image.png">
+<meta property="og:image" content="https://quiethike.com/{v["slug"]}-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{e(v["name"])} current price — QuietHike">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://quiethike.com/{v["slug"]}-og.png">
 <meta name="theme-color" content="#131d1a">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
