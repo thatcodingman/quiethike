@@ -5,7 +5,24 @@
   <link>https://quiethike.com/</link>
   <description>A weekly tracker of quiet, unannounced software pricing and policy changes, verified against each vendor's own current page.</description>
   <language>en-us</language>
+  <lastBuildDate>Wed, 30 Sep 2026 12:00:00 GMT</lastBuildDate>
   <atom:link href="https://quiethike.com/rss.xml" rel="self" type="application/rss+xml" />
+
+  <item>
+    <title>Salesforce's Core/Advanced/Max editions have gone from announced to live — on one pricing page</title>
+    <link>https://quiethike.com/#salesforce-agentforce-editions-live-2026-09</link>
+    <guid isPermaLink="true">https://quiethike.com/#salesforce-agentforce-editions-live-2026-09</guid>
+    <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+    <description>The prices themselves haven't moved since the September 3 announcement — what's changed is status. Salesforce's Sales Cloud pricing page now lists Core, Advanced, and Max as active editions with the same figures as announced: $195/$395/$550 per user/month, billed annually, with 500,000/1,000,000/2,750,000 Flex Credits per org per year respectively. Core and Advanced carry "Try for free" buttons; Max requires contacting sales. One inconsistency worth flagging: Salesforce's dedicated Agentforce pricing page (the one this site has sourced for the $125/mo add-on and Agentforce 1 Editions) still doesn't mention Core, Advanced, or Max by name at all — the new editions currently live only on the Sales product pricing page. We could not confirm Salesforce's own claim that existing Agentforce 1 Edition customers get a free upgrade to Max, and no specific effective date is stated anywhere we checked — both remain unconfirmed.</description>
+  </item>
+
+  <item>
+    <title>Salesforce adds Core/Advanced/Max Agentforce editions at $195–$550/user/mo</title>
+    <link>https://quiethike.com/#salesforce-agentforce-editions-2026-09</link>
+    <guid isPermaLink="true">https://quiethike.com/#salesforce-agentforce-editions-2026-09</guid>
+    <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+    <description>On September 3, 2026, Salesforce announced a new three-tier Agentforce Industry Edition structure — Core, Advanced, and Max — each priced per user per month and bundling a fixed amount of Flex Credits per org per year, rather than leaving credit usage entirely consumption-based. Salesforce says pricing on existing legacy editions is unchanged, and the new editions are rolling out "later this fall" rather than immediately. Salesforce's announcement doesn't clarify how these relate to the Agentforce 1 Editions or the standalone $125/user/month add-on covered in our earlier entries — whether they're replaced, renamed, or simply run alongside the new editions is unconfirmed, so we're not asserting a replacement here.</description>
+  </item>
 
   <item>
     <title>Salesforce keeps Agentforce at $125/user/mo but adds new pricing models</title>
