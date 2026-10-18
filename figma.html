@@ -65,6 +65,11 @@
         <h3>Figma&#x27;s per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise</h3>
         <div class="diff-line diff-removed">- Figma Design, Dev Mode, FigJam billed separately</div>
         <div class="diff-line diff-added">+ Unified seat types (Full/Dev/Collab), $3–$90/seat/mo depending on plan and seat type</div>
+        <p class="entry-takeaway"><span class="takeaway-label">What this means:</span> If your team is on an Organization or Enterprise plan, remember monthly billing is gone — budget annually so renewal doesn&#x27;t catch you off guard.</p>
+        <div class="entry-actions">
+          <button type="button" class="action-btn copy-link-btn" data-entry-id="figma-per-seat-pricing-overhaul">Copy link</button>
+          <a class="action-btn" target="_blank" rel="noopener" href="#" data-share-id="figma-per-seat-pricing-overhaul">Share on X</a>
+        </div>
         <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
         <div class="evidence-detail" hidden>
           <p class="log-body">The bigger story isn&#x27;t the sticker price — it&#x27;s that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it&#x27;s easy to miss unless you&#x27;re pricing out a renewal. Per-seat pricing (as of Sep 2026) breaks down as: Professional — Full $16/mo, Dev $12/mo, Collab $3/mo; Organization — Full $55/mo, Dev $25/mo, Collab $5/mo; Enterprise — Full $90/mo, Dev $35/mo, Collab $5/mo. Figma Design itself can&#x27;t be purchased separately — it&#x27;s bundled into the Full seat alongside Dev Mode, FigJam, and Figma Slides.</p>
@@ -91,6 +96,27 @@
   </div>
 </footer>
 <script>
+document.querySelectorAll('.copy-link-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var id = btn.getAttribute('data-entry-id');
+    var url = location.origin + location.pathname + '#' + id;
+    var reset = function () { btn.textContent = 'Copy link'; };
+    var done = function () { btn.textContent = 'Copied!'; setTimeout(reset, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done).catch(function () { window.prompt('Copy this link:', url); });
+    } else {
+      window.prompt('Copy this link:', url);
+    }
+  });
+});
+document.querySelectorAll('[data-share-id]').forEach(function (a) {
+  var id = a.getAttribute('data-share-id');
+  var article = document.getElementById(id);
+  var headline = article ? article.querySelector('h3').textContent.trim() : 'A quiet pricing change, caught and verified.';
+  var url = location.origin + location.pathname + '#' + id;
+  var text = headline + ' — via @QuietHike';
+  a.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+});
 document.querySelectorAll('.evidence-toggle').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var d = btn.nextElementSibling, open = btn.getAttribute('aria-expanded') === 'true';

@@ -65,6 +65,11 @@
         <h3>Atlassian is sunsetting Data Center outright — and Cloud migration isn&#x27;t a like-for-like cost swap</h3>
         <div class="diff-line diff-removed">- Data Center: perpetual on-prem licensing, no defined end date</div>
         <div class="diff-line diff-added">+ Phased shutdown: new-customer sales ended Mar 30, 2026 → existing-customer expansions end Mar 30, 2028 → licenses go read-only Mar 28, 2029</div>
+        <p class="entry-takeaway"><span class="takeaway-label">What this means:</span> If you run Data Center, start budgeting for Cloud now — the ~28% cost premium is a third-party estimate, not an Atlassian figure, so get your own quote before assuming it holds for you.</p>
+        <div class="entry-actions">
+          <button type="button" class="action-btn copy-link-btn" data-entry-id="atlassian-data-center-sunset">Copy link</button>
+          <a class="action-btn" target="_blank" rel="noopener" href="#" data-share-id="atlassian-data-center-sunset">Share on X</a>
+        </div>
         <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
         <div class="evidence-detail" hidden>
           <p class="log-body">Atlassian is retiring Data Center entirely on a three-year phased timeline rather than just raising its price. Bitbucket Data Center is the one exception — it keeps a separate hybrid license instead of following the sunset schedule. Atlassian is offering a 10–20% first-year discount on Cloud Enterprise for customers who migrate by June 2027, but that incentive doesn&#x27;t fully offset the underlying cost shift: independent analysis puts the average Cloud premium over equivalent Data Center pricing at around 28%, a figure Atlassian itself has not published or confirmed on its own pricing pages.</p>
@@ -91,6 +96,27 @@
   </div>
 </footer>
 <script>
+document.querySelectorAll('.copy-link-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var id = btn.getAttribute('data-entry-id');
+    var url = location.origin + location.pathname + '#' + id;
+    var reset = function () { btn.textContent = 'Copy link'; };
+    var done = function () { btn.textContent = 'Copied!'; setTimeout(reset, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done).catch(function () { window.prompt('Copy this link:', url); });
+    } else {
+      window.prompt('Copy this link:', url);
+    }
+  });
+});
+document.querySelectorAll('[data-share-id]').forEach(function (a) {
+  var id = a.getAttribute('data-share-id');
+  var article = document.getElementById(id);
+  var headline = article ? article.querySelector('h3').textContent.trim() : 'A quiet pricing change, caught and verified.';
+  var url = location.origin + location.pathname + '#' + id;
+  var text = headline + ' — via @QuietHike';
+  a.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+});
 document.querySelectorAll('.evidence-toggle').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var d = btn.nextElementSibling, open = btn.getAttribute('aria-expanded') === 'true';

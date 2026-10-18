@@ -337,3 +337,36 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 20px; }
 .snap-table tbody tr:hover { background: rgba(79, 168, 156, 0.06); }
 .snap-price { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink); }
 .snap-date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft); white-space: nowrap; }
+
+/* ---------------- takeaway line + share/copy actions ---------------- */
+.entry-takeaway {
+  margin: 10px 0 14px;
+  padding: 10px 14px;
+  background: rgba(79, 168, 156, 0.08);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+.takeaway-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-right: 6px;
+}
+.entry-actions { display: flex; gap: 10px; margin: 4px 0 10px; }
+.action-btn {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.action-btn:hover { color: var(--ink); border-color: var(--accent); text-decoration: none; }

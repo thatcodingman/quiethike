@@ -19,6 +19,7 @@ def render_entry(x, v):
     src = ' · '.join(f'<a href="{e(s["url"])}" target="_blank" rel="noopener" style="color: var(--accent);">{e(s["name"])}</a> [{e(s["type"])}]' for s in x['sources'])
     note = f'<p class="log-body"><strong>Disputed figure:</strong> {e(x["disputed_note"])}</p>' if x.get('disputed_note') else ''
     corr = f'<p class="log-body"><strong>Correction:</strong> {e(x["correction_note"])}</p>' if x.get('correction_note') else ''
+    takeaway = f'<p class="entry-takeaway"><span class="takeaway-label">What this means:</span> {e(x["takeaway"])}</p>' if x.get('takeaway') else ''
     return f'''      <article class="log-entry" id="{e(x["id"])}">
         <div class="log-meta">
           <span class="log-date">{e(x["date_display"])}</span>
@@ -29,6 +30,11 @@ def render_entry(x, v):
         <h3>{e(x["headline"])}</h3>
         <div class="diff-line diff-removed">- {e(x["old_price"])}</div>
         <div class="diff-line diff-added">+ {e(x["new_price"])}</div>
+        {takeaway}
+        <div class="entry-actions">
+          <button type="button" class="action-btn copy-link-btn" data-entry-id="{e(x["id"])}">Copy link</button>
+          <a class="action-btn" target="_blank" rel="noopener" href="#" data-share-id="{e(x["id"])}">Share on X</a>
+        </div>
         <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
         <div class="evidence-detail" hidden>
           <p class="log-body">{e(x["body"])}</p>
@@ -119,6 +125,27 @@ def page(v):
   </div>
 </footer>
 <script>
+document.querySelectorAll('.copy-link-btn').forEach(function (btn) {{
+  btn.addEventListener('click', function () {{
+    var id = btn.getAttribute('data-entry-id');
+    var url = location.origin + location.pathname + '#' + id;
+    var reset = function () {{ btn.textContent = 'Copy link'; }};
+    var done = function () {{ btn.textContent = 'Copied!'; setTimeout(reset, 1500); }};
+    if (navigator.clipboard && navigator.clipboard.writeText) {{
+      navigator.clipboard.writeText(url).then(done).catch(function () {{ window.prompt('Copy this link:', url); }});
+    }} else {{
+      window.prompt('Copy this link:', url);
+    }}
+  }});
+}});
+document.querySelectorAll('[data-share-id]').forEach(function (a) {{
+  var id = a.getAttribute('data-share-id');
+  var article = document.getElementById(id);
+  var headline = article ? article.querySelector('h3').textContent.trim() : 'A quiet pricing change, caught and verified.';
+  var url = location.origin + location.pathname + '#' + id;
+  var text = headline + ' — via @QuietHike';
+  a.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+}});
 document.querySelectorAll('.evidence-toggle').forEach(function (btn) {{
   btn.addEventListener('click', function () {{
     var d = btn.nextElementSibling, open = btn.getAttribute('aria-expanded') === 'true';
