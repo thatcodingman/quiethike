@@ -380,3 +380,45 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 20px; }
   font-weight: 600; text-decoration: none; transition: top 0.15s ease;
 }
 .skip-link:focus { top: 12px; }
+
+/* ---------------- email signup ---------------- */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.signup-hp { position: absolute; left: -9999px; top: -9999px; }
+.signup-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 32px 34px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.signup-copy { max-width: 46ch; }
+.signup-copy h2 { margin-bottom: 8px; }
+.signup-copy p { color: var(--ink-soft); margin: 0; }
+.signup-form { display: flex; gap: 10px; flex-wrap: wrap; flex: 0 0 auto; }
+.signup-input {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  padding: 0 16px;
+  min-height: 44px;
+  min-width: 240px;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--ink);
+}
+.signup-input::placeholder { color: var(--ink-soft); }
+.signup-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.signup-btn { min-height: 44px; border: none; }
+@media (max-width: 700px) {
+  .signup-card { flex-direction: column; align-items: stretch; }
+  .signup-form { flex-direction: column; }
+  .signup-input { min-width: 0; }
+}

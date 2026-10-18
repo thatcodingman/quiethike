@@ -88,6 +88,7 @@ def page(v):
       <a href="index.html#log">All changes</a>
       <a href="index.html#snapshot">Prices</a>
       <a href="index.html#methodology">How we verify</a>
+      <a href="index.html#subscribe">Subscribe</a>
     </nav>
   </div>
 </header>
@@ -219,6 +220,7 @@ def corrections_page():
       <a href="index.html#snapshot">Prices</a>
       <a href="index.html#log">All changes</a>
       <a href="index.html#methodology">How we verify</a>
+      <a href="index.html#subscribe">Subscribe</a>
     </nav>
   </div>
 </header>

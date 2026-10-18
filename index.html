@@ -201,6 +201,7 @@
       <a href="#snapshot">Prices</a>
       <a href="#log">This week</a>
       <a href="#methodology">How we verify</a>
+      <a href="#subscribe">Subscribe</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -579,6 +580,25 @@
           <div class="diff-line diff-context">03 → 04: renewal-date language checked against a live 90%-off promo, kept separate from the standard rate</div>
           <div class="diff-line diff-context">05: published with the historical figure labeled disputed, not silently resolved</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <div class="wrap">
+      <div class="signup-card">
+        <div class="signup-copy">
+          <p class="eyebrow">Weekly, no spam</p>
+          <h2>Get the log by email</h2>
+          <p>One email a week, only when a verified change goes live. No daily digest, no promotions.</p>
+        </div>
+        <form class="signup-form" name="weekly-digest" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks.html">
+          <input type="hidden" name="form-name" value="weekly-digest">
+          <p class="signup-hp"><label>Don't fill this out if you're human: <input name="company" /></label></p>
+          <label for="signup-email" class="visually-hidden">Email address</label>
+          <input type="email" id="signup-email" name="email" class="signup-input" placeholder="you@company.com" required autocomplete="email">
+          <button type="submit" class="btn btn-primary signup-btn">Subscribe</button>
+        </form>
       </div>
     </div>
   </section>
