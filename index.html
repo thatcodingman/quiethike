@@ -196,6 +196,7 @@
   <div class="wrap">
     <a href="index.html" class="logo"><span class="mark">▲▼</span> QuietHike</a>
     <nav class="main-nav">
+      <a href="#snapshot">Prices</a>
       <a href="#log">This week</a>
       <a href="#methodology">How we verify</a>
       <a href="#about">About</a>
@@ -261,6 +262,53 @@
     </div>
   </section>
 
+  <section class="section" id="snapshot">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Prices at a glance</p>
+        <h2>What we track, and what it costs today</h2>
+        <p>Every vendor's current tracked price, with the date we last rechecked it against the vendor's own page.</p>
+      </div>
+      <div class="snap-wrap">
+        <table class="snap-table">
+          <thead><tr><th scope="col">Vendor</th><th scope="col">Tracking</th><th scope="col">Current price</th><th scope="col">Last rechecked</th></tr></thead>
+          <tbody>
+          <tr>
+            <th scope="row"><a href="salesforce.html">Salesforce</a></th>
+            <td>Agentforce add-on and editions</td>
+            <td class="snap-price">$125/user/mo add-on · Core $195 / Advanced $395 / Max $550 per user/mo</td>
+            <td class="snap-date">Sep 30, 2026</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="quickbooks.html">QuickBooks Online</a></th>
+            <td>Essentials, Plus, Advanced</td>
+            <td class="snap-price">$85 / $140 / $340 per month (standard)</td>
+            <td class="snap-date">Sep 30, 2026</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="figma.html">Figma</a></th>
+            <td>Full seat by plan</td>
+            <td class="snap-price">Full seat $16 (Professional) / $55 (Organization) / $90 (Enterprise) per month</td>
+            <td class="snap-date">Sep 30, 2026</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="kit.html">Kit</a></th>
+            <td>Creator and Pro at 1,000 subscribers</td>
+            <td class="snap-price">Creator $33/mo annual ($39 monthly) · Pro $66/mo annual ($79 monthly)</td>
+            <td class="snap-date">Sep 30, 2026</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="atlassian.html">Atlassian</a></th>
+            <td>Data Center sunset</td>
+            <td class="snap-price">Data Center licenses go read-only Mar 28, 2029</td>
+            <td class="snap-date">Sep 30, 2026</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="log">
     <div class="wrap">
       <div class="section-head">
@@ -291,6 +339,7 @@
             <span class="log-date">September 30, 2026</span>
             <span class="log-tag tag-up">Structural change</span>
             <span class="log-tag tag-verified">Verified</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>Salesforce's Core/Advanced/Max editions have gone from announced to live — on one pricing page</h3>
           <div class="diff-line diff-removed">- Core, Advanced, Max announced Sept 3 with pricing described as taking effect "later this fall" <span class="src-tag">[VENDOR]</span> — not yet shown as purchasable</div>
@@ -298,6 +347,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">The prices themselves haven't moved since the September 3 announcement — what's changed is status. Salesforce's Sales Cloud pricing page now lists Core, Advanced, and Max as active editions with the same figures as announced: $195/$395/$550 per user/month, billed annually, with 500,000/1,000,000/2,750,000 Flex Credits per org per year respectively. Core and Advanced carry "Try for free" buttons; Max requires contacting sales. One inconsistency worth flagging: Salesforce's dedicated Agentforce pricing page (the one this site has sourced for the $125/mo add-on and Agentforce 1 Editions) still doesn't mention Core, Advanced, or Max by name at all — the new editions currently live only on the Sales product pricing page. We could not confirm Salesforce's own claim that existing Agentforce 1 Edition customers get a free upgrade to Max, and no specific effective date is stated anywhere we checked — both remain unconfirmed.</p>
+            <p class="log-source"><a href="salesforce.html" style="color: var(--accent);">All Salesforce price changes →</a></p>
             <p class="log-source">Sources: <a href="https://www.salesforce.com/sales/pricing/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce — Sales Cloud pricing page</a> [VENDOR] · <a href="https://www.salesforce.com/agentforce/pricing/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce — Agentforce pricing page (Core/Advanced/Max not present)</a> [VENDOR] · <a href="https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce Newsroom — original Sept 3 announcement</a> [VENDOR]</p>
           </div>
         </article>
@@ -307,6 +357,7 @@
             <span class="log-date">September 3, 2026</span>
             <span class="log-tag tag-up">Structural change</span>
             <span class="log-tag tag-verified">Verified</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>Salesforce adds Core/Advanced/Max Agentforce editions at $195–$550/user/mo</h3>
           <div class="diff-line diff-removed">- No fixed-credit Agentforce edition tiers <span class="src-tag">[VENDOR]</span> — packaging was the $125/user/mo add-on plus consumption-based Flex Credits and Agentforce 1 Editions from $550/user/mo</div>
@@ -314,6 +365,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">On September 3, 2026, Salesforce announced a new three-tier Agentforce Industry Edition structure — Core, Advanced, and Max — each priced per user per month and bundling a fixed amount of Flex Credits per org per year, rather than leaving credit usage entirely consumption-based. Salesforce says pricing on existing legacy editions is unchanged, and the new editions are rolling out "later this fall" rather than immediately. Salesforce's announcement doesn't clarify how these relate to the Agentforce 1 Editions or the standalone $125/user/month add-on covered in our earlier entries — whether they're replaced, renamed, or simply run alongside the new editions is unconfirmed, so we're not asserting a replacement here.</p>
+            <p class="log-source"><a href="salesforce.html" style="color: var(--accent);">All Salesforce price changes →</a></p>
             <p class="log-source">Sources: <a href="https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce Newsroom — Salesforce Simplifies Editions</a> [VENDOR]</p>
           </div>
         </article>
@@ -323,6 +375,7 @@
             <span class="log-date">August 25, 2026</span>
             <span class="log-tag tag-up">Structural change</span>
             <span class="log-tag tag-verified">Verified</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>Salesforce keeps Agentforce at $125/user/mo but adds new pricing models</h3>
           <div class="diff-line diff-removed">- Agentforce add-on: $125/user/month billed annually <span class="src-tag">[VENDOR]</span> (single option)</div>
@@ -330,6 +383,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">The $125/user/month Agentforce add-on hasn't been replaced — it's still listed for Sales and Service. What's changed is the packaging around it: Salesforce now also sells consumption-based Flex Credits, per-conversation pricing, a much pricier all-in Agentforce 1 Edition tier, and a low-cost per-user license that still requires buying Flex Credits separately. For buyers, $125 is now one option inside a wider menu rather than the only current path to Agentforce.</p>
+            <p class="log-source"><a href="salesforce.html" style="color: var(--accent);">All Salesforce price changes →</a></p>
             <p class="log-source">Sources: <a href="https://www.salesforce.com/agentforce/pricing/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce — Agentforce pricing page</a> [VENDOR] · <a href="https://www.salesforce.com/sales/pricing/add-ons/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce — Sales add-on pricing</a> [VENDOR]</p>
           </div>
         </article>
@@ -339,6 +393,7 @@
             <span class="log-date">Announced Sep 2025, sunset phased 2026–2029</span>
             <span class="log-tag tag-up">Structural change</span>
             <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>Atlassian is sunsetting Data Center outright — and Cloud migration isn't a like-for-like cost swap</h3>
           <div class="diff-line diff-removed">- Data Center: perpetual on-prem licensing, no defined end date <span class="src-tag">[VENDOR]</span></div>
@@ -346,6 +401,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">Atlassian is retiring Data Center entirely on a three-year phased timeline rather than just raising its price. Bitbucket Data Center is the one exception — it keeps a separate hybrid license instead of following the sunset schedule. Atlassian is offering a 10–20% first-year discount on Cloud Enterprise for customers who migrate by June 2027, but that incentive doesn't fully offset the underlying cost shift: independent analysis puts the average Cloud premium over equivalent Data Center pricing at around <button type="button" class="disputed-badge" data-disputed-note="Atlassian does not publish or confirm this figure on its own pricing pages. The ~28% average Cloud cost premium comes from independent third-party analysis (Computerworld and The Jira Guy), not from Atlassian directly — treat it as a credible estimate, not a vendor-confirmed number.">28% — disputed ⓘ</button>, a figure Atlassian itself has not published or confirmed on its own pricing pages.</p>
+            <p class="log-source"><a href="atlassian.html" style="color: var(--accent);">All Atlassian price changes →</a></p>
             <p class="log-source">Sources: <a href="https://www.atlassian.com/licensing/data-center-end-of-life" target="_blank" rel="noopener" style="color: var(--accent);">Atlassian — Data Center End of Life</a> [VENDOR] · <a href="https://www.computerworld.com/article/4054807/atlassian-says-its-dont-f-the-customer-principle-drove-cloud-only-decision.html" target="_blank" rel="noopener" style="color: var(--accent);">Computerworld</a> [3P] · <a href="https://thejiraguy.com/2025/09/08/so-long-data-center/" target="_blank" rel="noopener" style="color: var(--accent);">The Jira Guy</a> [3P — 28% figure]</p>
           </div>
         </article>
@@ -355,6 +411,7 @@
             <span class="log-date">Announced August 2025, migration ongoing through 2026</span>
             <span class="log-tag tag-up">Structural change</span>
             <span class="log-tag tag-verified">Verified</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>Salesforce replaces Einstein AI packaging with a $125/user/mo Agentforce add-on</h3>
           <div class="diff-line diff-removed">- Einstein add-ons / Einstein 1 Editions (retired)</div>
@@ -362,6 +419,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">This is an add-on price on top of the underlying Salesforce edition, not a replacement for Salesforce's core CRM subscription. Salesforce announced the Einstein-to-Agentforce replacement publicly in August 2025 — so it's not a hidden pricing-page swap — but the migration mechanics are where it gets less obvious. Agentforce (Default) reached End of Sale on June 17, 2025, and Salesforce's own Help docs lay out what happens when an existing Einstein customer upgrades their SKU to Agentforce. Separately, as of October 24, 2025, Agentforce usage outside unmetered employee-agent activity is tracked through a new "Flex Credits" system — so the $125/month sticker price doesn't mean unlimited AI usage. We could not verify a universal rule that every legacy Einstein customer is automatically moved to the new pricing at renewal; treat that specific claim as unconfirmed.</p>
+            <p class="log-source"><a href="salesforce.html" style="color: var(--accent);">All Salesforce price changes →</a></p>
             <p class="log-source">Sources: <a href="https://www.salesforce.com/news/stories/pricing-update-2025/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce News — Pricing Update announcement</a> [VENDOR] · <a href="https://www.salesforce.com/agentforce/pricing/" target="_blank" rel="noopener" style="color: var(--accent);">Agentforce pricing page</a> [VENDOR] · <a href="https://help.salesforce.com/s/articleView?id=005197697&language=en_US&type=1" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce Help — Flex Credit Rate Card FAQ</a> [VENDOR]</p>
           </div>
         </article>
@@ -371,6 +429,7 @@
             <span class="log-date">Aug 1, 2026</span>
             <span class="log-tag tag-up">Price increase</span>
             <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>QuickBooks raises affected Essentials, Plus, and Advanced subscriptions at renewal — but not Simple Start</h3>
           <p class="log-body" style="font-size: 0.86rem; color: var(--diff-red); margin-bottom: 14px;"><b>Correction:</b> an earlier version of this entry incorrectly stated that QuickBooks Simple Start's price rose to $38/mo on August 1, 2026. QuickBooks' own official pricing update confirms Simple Start, Free, Lite, and Ledger were explicitly excluded from this increase — only Essentials, Plus, and Advanced changed. This entry has been corrected to reflect that.</p>
@@ -379,6 +438,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">QuickBooks Online raised prices for Essentials, Plus, and Advanced at renewals on or after August 1, 2026 — Simple Start, Free, Lite, and Ledger were not part of this increase, per QuickBooks' own announcement. Essentials rose to $85/mo (third-party sources disagree on the prior figure, citing either $60 or $75). Advanced rose to $340/mo (prior figure similarly disputed between $200 and $275 across sources). Prepaid annual subscribers generally keep their existing rate until the current term ends, and some recent subscribers get a six-month price-protection window. We could not source an exact count of how many total increases QuickBooks has made since 2022; treat "a series of past increases" as accurate without a specific number attached.</p>
+            <p class="log-source"><a href="quickbooks.html" style="color: var(--accent);">All QuickBooks Online price changes →</a></p>
             <p class="log-source">Sources: <a href="https://quickbooks.intuit.com/r/product-update/quickbooks-price-changes/" target="_blank" rel="noopener" style="color: var(--accent);">QuickBooks — official pricing update announcement</a> [VENDOR] · <a href="https://www.certumsolutions.com/library/quickbooks-price-increase-august-2026" target="_blank" rel="noopener" style="color: var(--accent);">Certum Solutions</a> [3P] · <a href="https://www.mosofin.com/blog/quickbooks-price-increase-2026" target="_blank" rel="noopener" style="color: var(--accent);">MosoFin</a> [3P — disagrees with Certum on prior Plus/Advanced figures]</p>
           </div>
         </article>
@@ -388,6 +448,7 @@
             <span class="log-date">Mar 11, 2025</span>
             <span class="log-tag tag-up">Structural change</span>
             <span class="log-tag tag-verified">Verified</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>Figma's per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise</h3>
           <div class="diff-line diff-removed">- Figma Design, Dev Mode, FigJam billed separately <span class="src-tag">[VENDOR]</span></div>
@@ -395,6 +456,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal. Per-seat pricing (as of Sep 2026) breaks down as: Professional — Full $16/mo, Dev $12/mo, Collab $3/mo; Organization — Full $55/mo, Dev $25/mo, Collab $5/mo; Enterprise — Full $90/mo, Dev $35/mo, Collab $5/mo. Figma Design itself can't be purchased separately — it's bundled into the Full seat alongside Dev Mode, FigJam, and Figma Slides.</p>
+            <p class="log-source"><a href="figma.html" style="color: var(--accent);">All Figma price changes →</a></p>
             <p class="log-source">Sources: <a href="https://www.figma.com/professional/" target="_blank" rel="noopener" style="color: var(--accent);">Figma — Professional plan pricing</a> [VENDOR] · <a href="https://help.figma.com/hc/en-us/articles/13839214115607-Professional-plan-overview" target="_blank" rel="noopener" style="color: var(--accent);">Figma Help — Professional plan overview</a> [VENDOR] · <a href="https://forum.figma.com/t/i-m-curious-about-the-differences-in-billing-methods-for-the-plans/94132" target="_blank" rel="noopener" style="color: var(--accent);">Figma community forum</a> [3P]</p>
           </div>
         </article>
@@ -404,6 +466,7 @@
             <span class="log-date">Sep 2025</span>
             <span class="log-tag tag-up">Price increase</span>
             <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
+            <span class="log-verified">Rechecked Sep 30, 2026</span>
           </div>
           <h3>Kit retired its old $15 entry tier — and Creator now starts at $33/mo billed annually</h3>
           <div class="diff-line diff-removed">- $15/mo <span class="src-tag">[3P]</span> (Creator, ~300 subscribers, legacy pricing)</div>
@@ -411,6 +474,7 @@
           <button type="button" class="evidence-toggle" aria-expanded="false">View evidence →</button>
           <div class="evidence-detail" hidden>
             <p class="log-body">This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups. Separately: as of September 2026, Kit's higher tier is mid-rebrand — its current marketing page is titled "Kit Pro," while the linked help-center article and the page's own URL slug still say "Creator Pro." At 1,000 subscribers, Pro currently starts at $79/month, or $66/month equivalent billed annually.</p>
+            <p class="log-source"><a href="kit.html" style="color: var(--accent);">All Kit price changes →</a></p>
             <p class="log-source">Sources: <a href="https://help.kit.com/en/articles/4494683-creator-plan-vs-creator-pro" target="_blank" rel="noopener" style="color: var(--accent);">Kit's own help center</a> [VENDOR] · <a href="https://ecommerce-platforms.com/articles/convertkit-pricing" target="_blank" rel="noopener" style="color: var(--accent);">Ecommerce-Platforms.com, published April 2024 — contemporaneous record of the $15/mo price while it was still current</a> [3P] · <a href="https://buyersprint.com/2026/04/05/convertkit-pricing-2026/" target="_blank" rel="noopener" style="color: var(--accent);">BuyerSprint</a> [3P] · <a href="https://kit.com/features/creator-pro" target="_blank" rel="noopener" style="color: var(--accent);">Kit Pro marketing page</a> [VENDOR — Pro rebrand and current pricing]</p>
           </div>
         </article>

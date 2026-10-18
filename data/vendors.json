@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "salesforce", "name": "Salesforce", "match": "Salesforce",
+    "tracks": "Agentforce add-on and editions",
+    "current": "$125/user/mo add-on · Core $195 / Advanced $395 / Max $550 per user/mo",
+    "last_verified": "2026-09-30",
+    "blurb": "Salesforce has restructured how it sells AI three times in about a year: Einstein add-ons became a $125/user/month Agentforce add-on, packaging then expanded to Flex Credits, conversations and Agentforce 1 Editions, and in September 2026 Core, Advanced and Max editions appeared. Every change below is verified against Salesforce's own pages."
+  },
+  {
+    "slug": "quickbooks", "name": "QuickBooks Online", "match": "QuickBooks Online",
+    "tracks": "Essentials, Plus, Advanced",
+    "current": "$85 / $140 / $340 per month (standard)",
+    "last_verified": "2026-09-30",
+    "blurb": "QuickBooks Online raised Essentials, Plus and Advanced prices at renewals on or after August 1, 2026. Simple Start, Free, Lite and Ledger were excluded."
+  },
+  {
+    "slug": "figma", "name": "Figma", "match": "Figma",
+    "tracks": "Full seat by plan",
+    "current": "Full seat $16 (Professional) / $55 (Organization) / $90 (Enterprise) per month",
+    "last_verified": "2026-09-30",
+    "blurb": "Figma replaced per-product billing with unified Full, Dev and Collab seats in March 2025, and removed monthly billing from Organization and Enterprise."
+  },
+  {
+    "slug": "kit", "name": "Kit", "match": "Kit",
+    "tracks": "Creator and Pro at 1,000 subscribers",
+    "current": "Creator $33/mo annual ($39 monthly) · Pro $66/mo annual ($79 monthly)",
+    "last_verified": "2026-09-30",
+    "blurb": "Kit (formerly ConvertKit) retired its old $15/month entry tier in a September 2025 repricing, and its higher tier is mid-rebrand from Creator Pro to Kit Pro."
+  },
+  {
+    "slug": "atlassian", "name": "Atlassian", "match": "Atlassian",
+    "tracks": "Data Center sunset",
+    "current": "Data Center licenses go read-only Mar 28, 2029",
+    "last_verified": "2026-09-30",
+    "blurb": "Atlassian is retiring Data Center on a phased timeline through 2029 and steering customers to Cloud. The ~28% average Cloud cost increase is third-party analysis, not an Atlassian figure."
+  }
+]
