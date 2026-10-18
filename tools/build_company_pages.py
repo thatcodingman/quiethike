@@ -7,6 +7,7 @@ import json, html, datetime, pathlib
 root = pathlib.Path(__file__).resolve().parent.parent
 entries = json.load(open(root/'data/log-entries.json', encoding='utf-8'))
 vendors = json.load(open(root/'data/vendors.json', encoding='utf-8'))
+comparisons = json.load(open(root/'data/comparisons.json', encoding='utf-8')) if (root/'data/comparisons.json').exists() else {}
 e = html.escape
 def nice(d):
     dt = datetime.date.fromisoformat(d); return dt.strftime('%b %-d, %Y')
@@ -43,6 +44,33 @@ def render_entry(x, v):
           <p class="log-source"><a href="index.html#{e(x["id"])}" style="color: var(--accent);">See this entry on the main log →</a></p>
         </div>
       </article>'''
+def render_compare(c):
+    cols = c['columns']
+    head = ''.join(f'<th scope="col">{e(col)}</th>' for col in cols)
+    def rowhtml(r):
+        cells = ''.join(f'<td>{e(v)}</td>' for v in r['values'])
+        return f'<tr><th scope="row">{e(r["label"])}</th>{cells}</tr>'
+    rows = '\n          '.join(rowhtml(r) for r in c['rows'])
+    foot = f'<p class="log-source" style="margin-top:14px;">{e(c["footnote"])}</p>' if c.get('footnote') else ''
+    return f'''  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Compare</p>
+        <h2>{e(c["title"])}</h2>
+        <p>{e(c["intro"])}</p>
+      </div>
+      <div class="snap-wrap">
+        <table class="snap-table compare-table">
+          <thead><tr><th scope="col"></th>{head}</tr></thead>
+          <tbody>
+          {rows}
+          </tbody>
+        </table>
+      </div>
+      {foot}
+    </div>
+  </section>
+'''
 def page(v):
     xs = sorted([x for x in entries if x['company']==v['match']], key=lambda x: (x['date_logged'], ), reverse=True)
     n = len(xs)
@@ -51,6 +79,7 @@ def page(v):
     url = f'https://quiethike.com/{v["slug"]}.html'
     ld_items = ','.join(json.dumps({"@type":"ListItem","position":i+1,"url":f'{url}#{x["id"]}',"item":{"@type":"Article","headline":x["headline"],"datePublished":x["date_logged"],"dateModified":v["last_verified"],"author":{"@type":"Organization","name":"QuietHike"},"publisher":{"@type":"Organization","name":"QuietHike"}}}, ensure_ascii=False) for i,x in enumerate(xs))
     bc = json.dumps({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"QuietHike","item":"https://quiethike.com/"},{"@type":"ListItem","position":2,"name":f'{v["name"]} price changes',"item":url}]}, ensure_ascii=False)
+    compare_block = render_compare(comparisons[v['slug']]) if v['slug'] in comparisons else ''
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,7 +134,7 @@ def page(v):
       </div>
     </div>
   </section>
-  <section class="section">
+{compare_block}  <section class="section">
     <div class="wrap">
       <div class="section-head"><h2>History ({n} logged {"changes" if n!=1 else "change"})</h2><p>Newest first. Each entry stays as the historical record; later changes are added as new entries.</p></div>
       <div class="log-list">

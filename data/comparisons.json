@@ -1,0 +1,26 @@
+{
+  "salesforce": {
+    "title": "Agentforce editions, side by side",
+    "intro": "Announced September 3, 2026 and live on Salesforce's Sales Cloud pricing page as of September 30. All three bill annually per user, per month.",
+    "columns": ["Core", "Advanced", "Max"],
+    "rows": [
+      {"label": "Price", "values": ["$195/user/mo", "$395/user/mo", "$550/user/mo"]},
+      {"label": "Flex Credits", "values": ["500,000/org/year", "1,000,000/org/year", "2,750,000/org/year"]},
+      {"label": "Trial", "values": ["Try for free", "Try for free", "Contact sales"]},
+      {"label": "Bundled extras", "values": ["Slack Business+, Tableau Next", "Core + enhanced security, more AI, expanded data capacity", "Full AI suite access"]}
+    ],
+    "footnote": "This is separate from the standalone $125/user/month Agentforce add-on covered in our earlier entries — Salesforce hasn't clarified how the two relate."
+  },
+  "figma": {
+    "title": "Full seat price by plan",
+    "intro": "Figma's per-seat pricing varies by plan tier and seat type. Full seats include Figma Design, Dev Mode, FigJam, and Figma Slides.",
+    "columns": ["Professional", "Organization", "Enterprise"],
+    "rows": [
+      {"label": "Full seat", "values": ["$16/mo", "$55/mo", "$90/mo"]},
+      {"label": "Dev seat", "values": ["$12/mo", "$25/mo", "$35/mo"]},
+      {"label": "Collab seat", "values": ["$3/mo", "$5/mo", "$5/mo"]},
+      {"label": "Billing", "values": ["Monthly or annual", "Annual only", "Annual only"]}
+    ],
+    "footnote": "Organization and Enterprise lost monthly billing entirely in the March 2025 overhaul — only Professional still offers it."
+  }
+}
