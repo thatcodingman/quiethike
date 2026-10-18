@@ -44,6 +44,39 @@ def render_entry(x, v):
           <p class="log-source"><a href="index.html#{e(x["id"])}" style="color: var(--accent);">See this entry on the main log →</a></p>
         </div>
       </article>'''
+def rfc822(d):
+    dt = datetime.date.fromisoformat(d)
+    return dt.strftime('%a, %d %b %Y 12:00:00 GMT')
+def rss_for_vendor(v):
+    xs = sorted([x for x in entries if x['company']==v['match']], key=lambda x: x['date_logged'], reverse=True)
+    url = f'https://quiethike.com/{v["slug"]}.html'
+    feed_url = f'https://quiethike.com/{v["slug"]}-rss.xml'
+    build_date = rfc822(max(x['date_logged'] for x in xs)) if xs else rfc822(v['last_verified'])
+    def item(x):
+        link = f'{url}#{x["id"]}'
+        return f'''  <item>
+    <title>{e(x["headline"])}</title>
+    <link>{link}</link>
+    <guid isPermaLink="true">{link}</guid>
+    <pubDate>{rfc822(x["date_logged"])}</pubDate>
+    <description>{e(x["body"])}</description>
+  </item>'''
+    items = '\n\n'.join(item(x) for x in xs)
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>QuietHike — {e(v["name"])} Price Changes</title>
+  <link>{url}</link>
+  <description>Every {e(v["name"])} pricing change QuietHike has caught and verified, and nothing else.</description>
+  <language>en-us</language>
+  <lastBuildDate>{build_date}</lastBuildDate>
+  <atom:link href="{feed_url}" rel="self" type="application/rss+xml" />
+
+{items}
+
+</channel>
+</rss>
+'''
 def render_compare(c):
     cols = c['columns']
     head = ''.join(f'<th scope="col">{e(col)}</th>' for col in cols)
@@ -100,6 +133,7 @@ def page(v):
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="alternate" type="application/rss+xml" title="QuietHike — Price Change Log" href="https://quiethike.com/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="QuietHike — {e(v["name"])} Price Changes" href="https://quiethike.com/{v["slug"]}-rss.xml">
 {GA}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,6 +167,7 @@ def page(v):
         <span class="vendor-now-price">{e(v["current"])}</span>
         <span class="log-verified">Last rechecked {nice(v["last_verified"])}</span>
       </div>
+      <p class="log-source" style="margin-top:12px;"><a href="{v["slug"]}-rss.xml" style="color: var(--accent);">Follow only {e(v["name"])} (RSS) →</a></p>
     </div>
   </section>
 {compare_block}  <section class="section">
@@ -401,6 +436,7 @@ def corrections_page():
 
 for v in vendors:
     (root/f'{v["slug"]}.html').write_text(page(v), encoding='utf-8')
+    (root/f'{v["slug"]}-rss.xml').write_text(rss_for_vendor(v), encoding='utf-8')
 (root/'corrections.html').write_text(corrections_page(), encoding='utf-8')
 (root/'timeline.html').write_text(timeline_page(), encoding='utf-8')
 today = max(v['last_verified'] for v in vendors)

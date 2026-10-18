@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>QuietHike — Figma Price Changes</title>
+  <link>https://quiethike.com/figma.html</link>
+  <description>Every Figma pricing change QuietHike has caught and verified, and nothing else.</description>
+  <language>en-us</language>
+  <lastBuildDate>Fri, 21 Aug 2026 12:00:00 GMT</lastBuildDate>
+  <atom:link href="https://quiethike.com/figma-rss.xml" rel="self" type="application/rss+xml" />
+
+  <item>
+    <title>Figma&#x27;s per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise</title>
+    <link>https://quiethike.com/figma.html#figma-per-seat-pricing-overhaul</link>
+    <guid isPermaLink="true">https://quiethike.com/figma.html#figma-per-seat-pricing-overhaul</guid>
+    <pubDate>Fri, 21 Aug 2026 12:00:00 GMT</pubDate>
+    <description>The bigger story isn&#x27;t the sticker price — it&#x27;s that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it&#x27;s easy to miss unless you&#x27;re pricing out a renewal. Per-seat pricing (as of Sep 2026) breaks down as: Professional — Full $16/mo, Dev $12/mo, Collab $3/mo; Organization — Full $55/mo, Dev $25/mo, Collab $5/mo; Enterprise — Full $90/mo, Dev $35/mo, Collab $5/mo. Figma Design itself can&#x27;t be purchased separately — it&#x27;s bundled into the Full seat alongside Dev Mode, FigJam, and Figma Slides.</description>
+  </item>
+
+</channel>
+</rss>

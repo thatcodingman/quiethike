@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>QuietHike — Kit Price Changes</title>
+  <link>https://quiethike.com/kit.html</link>
+  <description>Every Kit pricing change QuietHike has caught and verified, and nothing else.</description>
+  <language>en-us</language>
+  <lastBuildDate>Fri, 21 Aug 2026 12:00:00 GMT</lastBuildDate>
+  <atom:link href="https://quiethike.com/kit-rss.xml" rel="self" type="application/rss+xml" />
+
+  <item>
+    <title>Kit retired its old $15 entry tier — and Creator now starts at $33/mo billed annually</title>
+    <link>https://quiethike.com/kit.html#kit-creator-plan-repricing</link>
+    <guid isPermaLink="true">https://quiethike.com/kit.html#kit-creator-plan-repricing</guid>
+    <pubDate>Fri, 21 Aug 2026 12:00:00 GMT</pubDate>
+    <description>This wasn&#x27;t a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit&#x27;s &quot;starts at $15&quot; is quoting a price that no longer exists for new signups. Separately: as of September 2026, Kit&#x27;s higher tier is mid-rebrand — its current marketing page is titled &quot;Kit Pro,&quot; while the linked help-center article and the page&#x27;s own URL slug still say &quot;Creator Pro.&quot; At 1,000 subscribers, Pro currently starts at $79/month, or $66/month equivalent billed annually.</description>
+  </item>
+
+</channel>
+</rss>
