@@ -32,6 +32,7 @@
     <nav class="main-nav">
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
+      <a href="insights.html">Insights</a>
       <a href="index.html#methodology">How we verify</a>
       <a href="index.html#about">About</a>
     </nav>
@@ -91,6 +92,7 @@
     <nav class="foot-links">
       <a href="index.html#log">This week</a>
       <a href="timeline.html">Timeline</a>
+      <a href="insights.html">Insights</a>
       <a href="index.html#methodology">Methodology</a>
       <a href="index.html#faq">FAQ</a>
       <a href="index.html#about">About</a>
@@ -125,6 +127,30 @@
     var url = location.origin + '/index.html#' + id;
     var text = headline + ' — via @QuietHike';
     a.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+  });
+  document.querySelectorAll('.entry-actions').forEach(function (actions) {
+    var article = actions.closest('.log-entry');
+    if (!article) return;
+    var id = article.id;
+    var h3 = article.querySelector('h3');
+    var headline = h3 ? h3.textContent.trim() : 'A quiet pricing change, verified by QuietHike.';
+    var url = location.origin + '/index.html#' + id;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'action-btn embed-btn';
+    btn.textContent = 'Embed';
+    actions.appendChild(btn);
+    btn.addEventListener('click', function () {
+      var snippet = '<blockquote cite="' + url + '">' + headline + '</blockquote>\n' +
+        '<p>Verified by <a href="' + url + '" rel="noopener">QuietHike</a> — a weekly SaaS price-change tracker.</p>';
+      var reset = function () { btn.textContent = 'Embed'; };
+      var done = function () { btn.textContent = 'Copied!'; setTimeout(reset, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(snippet).then(done).catch(function () { window.prompt('Copy this embed code:', snippet); });
+      } else {
+        window.prompt('Copy this embed code:', snippet);
+      }
+    });
   });
   document.querySelectorAll('.evidence-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {

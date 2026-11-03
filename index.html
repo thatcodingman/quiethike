@@ -95,6 +95,16 @@
       "@type": "Question",
       "name": "Can I suggest a vendor to track?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes, on the Suggest a vendor page. Tell us the vendor and their pricing page, and we'll check it against their own pages before adding anything." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do SaaS companies raise prices quietly instead of announcing them?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usually to avoid a single visible headline number. Instead of a flat price hike, vendors rename a plan, shrink what a tier includes, meter something that used to be unlimited, or change the unit you're billed on (per seat, per conversation, per credit). Each tactic is individually small enough to skip a press release. See our field guide on quiet price-increase tactics for examples." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I track SaaS price increases before I get billed for them?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Check the vendor's own pricing page periodically (not a cached review site), read changelog or \"what's new\" pages for billing-adjacent language, and watch for plan renames — a new name on an old plan is the most common way a price change goes unannounced. QuietHike does this weekly and logs the diff with sources." }
     }
   ]
 }
@@ -284,6 +294,7 @@
       <a href="#snapshot">Prices</a>
       <a href="#log">This week</a>
       <a href="timeline.html">Timeline</a>
+      <a href="insights.html">Insights</a>
       <a href="#methodology">How we verify</a>
       <a href="#subscribe">Subscribe</a>
       <a href="#about">About</a>
@@ -784,6 +795,14 @@
           <summary>Can I suggest a vendor to track?</summary>
           <div class="faq-answer"><p>Yes, on the <a href="suggest.html">Suggest a vendor</a> page. Tell us the vendor and their pricing page, and we'll check it against their own pages before adding anything.</p></div>
         </details>
+        <details class="faq-item">
+          <summary>Why do SaaS companies raise prices quietly instead of announcing them?</summary>
+          <div class="faq-answer"><p>Usually to avoid a single visible headline number. Instead of a flat price hike, vendors rename a plan, shrink what a tier includes, meter something that used to be unlimited, or change the unit you're billed on — per seat, per conversation, per credit. Each move is individually small enough to skip a press release. See our <a href="insights.html#price-increase-tactics">field guide on quiet price-increase tactics</a> for real examples.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How can I track SaaS price increases before I get billed for them?</summary>
+          <div class="faq-answer"><p>Check the vendor's own pricing page periodically — not a cached review site — and read changelog or "what's new" pages for billing-adjacent language. Watch for plan renames, since a new name on an old plan is the most common way a price change goes unannounced. QuietHike does this weekly and logs the diff with sources; see <a href="insights.html">our Insights section</a> for more on how to read an announcement yourself.</p></div>
+        </details>
       </div>
     </div>
   </section>
@@ -825,6 +844,7 @@
     <nav class="foot-links">
       <a href="#log">This week</a>
       <a href="timeline.html">Timeline</a>
+      <a href="insights.html">Insights</a>
       <a href="#methodology">Methodology</a>
       <a href="#faq">FAQ</a>
       <a href="#about">About</a>
@@ -940,6 +960,38 @@
     var url = location.origin + location.pathname + '#' + id;
     var text = headline + ' — via @QuietHike';
     a.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+  });
+
+  // --- embed/cite button: lets other sites quote a verified entry with
+  // a link back here. Injected into every entry-actions row so existing
+  // markup doesn't need touching per-entry. ---
+  document.querySelectorAll('.entry-actions').forEach(function (actions) {
+    var article = actions.closest('.log-entry');
+    if (!article) return;
+    var id = article.id;
+    var h3 = article.querySelector('h3');
+    var headline = h3 ? h3.textContent.trim() : 'A quiet pricing change, verified by QuietHike.';
+    var url = location.origin + '/' + (location.pathname.endsWith('/') ? 'index.html' : location.pathname.split('/').pop() || 'index.html') + '#' + id;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'action-btn embed-btn';
+    btn.textContent = 'Embed';
+    actions.appendChild(btn);
+
+    btn.addEventListener('click', function () {
+      var snippet = '<blockquote cite="' + url + '">' + headline + '</blockquote>\n' +
+        '<p>Verified by <a href="' + url + '" rel="noopener">QuietHike</a> — a weekly SaaS price-change tracker.</p>';
+      var reset = function () { btn.textContent = 'Embed'; };
+      var done = function () { btn.textContent = 'Copied!'; setTimeout(reset, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(snippet).then(done).catch(function () {
+          window.prompt('Copy this embed code:', snippet);
+        });
+      } else {
+        window.prompt('Copy this embed code:', snippet);
+      }
+    });
   });
 
   // --- expandable evidence cards ---
